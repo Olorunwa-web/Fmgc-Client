@@ -11,7 +11,7 @@ import { RiFacebookLine } from "react-icons/ri";
 import { FaThreads } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa";
-
+import Prefooter from '../Components/Prefooter';
 
 
 
@@ -234,8 +234,8 @@ const About = () => {
           </button>
         </div>
       </section>
+      <Prefooter/>
     </div>
   );
 };
-
 export default About;

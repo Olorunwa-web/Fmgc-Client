@@ -5,6 +5,7 @@ import harmburg from '../assets/menu_34dp_000000_FILL0_wght400_GRAD0_opsz40.svg'
 import harmburgclose from '../assets/close_32dp_000000_FILL0_wght400_GRAD0_opsz40.svg';
 import { AuthContext } from "../Auth/context/AuthContext";
 import { useContext } from 'react';
+import Footer from '../Components/Footer'
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
@@ -162,8 +163,10 @@ const Navbar = () => {
           </main>
         </section>
         <Outlet />
-      </>
-    );
+        <Footer/>
+        </>
+    )
+
 }
 
 export default Navbar
