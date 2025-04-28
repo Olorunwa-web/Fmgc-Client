@@ -2,7 +2,6 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Autoplay } from 'swiper/modules';
 import imgage1 from '../assets/Frame 1171276227.jpg';
-import image6 from '../assets/Frame 1171276233.jpg';
 import image7 from '../assets/Frame 1171276234.jpg';
 import pzimage from '../assets/image 15.jpg';
 import 'swiper/css';

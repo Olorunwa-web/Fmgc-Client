@@ -6,7 +6,7 @@ import { FaFacebook, FaApple } from "react-icons/fa";
 import { useGoogleLogin } from "@react-oauth/google";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+// import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 export default function ForgotPasswordPage() {
   const navigate = useNavigate();
@@ -143,7 +143,7 @@ export default function ForgotPasswordPage() {
               {isResending ? "Resending..." : "Resend link to mail"}
             </button>
             <div className="flex justify-evenly items-center mt-8">
-              <FacebookLogin
+              {/* <FacebookLogin
                 appId="YOUR_FACEBOOK_APP_ID"
                 autoLoad={false}
                 callback={async (response) => {
@@ -176,7 +176,10 @@ export default function ForgotPasswordPage() {
                     </span>
                   </button>
                 )}
-              />
+              /> */}
+               <button className="border border-gray-400 w-[70px] md:w-[100px] flex items-center justify-center py-1 rounded-sm">
+                            <FaFacebook size={20} className="text-blue-700" />
+                          </button>
 
               <button
                 onClick={() => googleSignup()}

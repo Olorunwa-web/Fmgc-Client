@@ -6,7 +6,7 @@ import { FaEye, FaEyeSlash, FaFacebook, FaApple } from "react-icons/fa";
 import { useGoogleLogin } from "@react-oauth/google";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+// import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -219,7 +219,7 @@ const SignUp = () => {
           </p>
 
           <div className="flex justify-evenly items-center mt-3">
-            <FacebookLogin
+            {/* <FacebookLogin
               appId="YOUR_FACEBOOK_APP_ID"
               autoLoad={false}
               callback={async (response) => {
@@ -252,8 +252,10 @@ const SignUp = () => {
                   </span>
                 </button>
               )}
-            />
-
+            /> */}
+             <button className="border border-gray-400 w-[70px] md:w-[100px] flex items-center justify-center py-1 rounded-sm">
+                          <FaFacebook size={20} className="text-blue-700" />
+                        </button>
             <button
               onClick={() => googleSignup()}
               className="border border-gray-400 rounded-sm w-[70px] md:w-[100px] flex items-center justify-center py-1"
