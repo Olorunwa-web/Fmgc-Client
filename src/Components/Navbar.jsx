@@ -3,7 +3,7 @@ import pz from '../assets/pz 3 1.svg';
 import { Link, Outlet, NavLink } from 'react-router-dom';
 import harmburg from '../assets/menu_34dp_000000_FILL0_wght400_GRAD0_opsz40.svg';
 import harmburgclose from '../assets/close_32dp_000000_FILL0_wght400_GRAD0_opsz40.svg';
-
+import Footer from '../Components/Footer'
 
 const Navbar = () => {
 
@@ -11,8 +11,8 @@ const Navbar = () => {
 
     return (
         <>
-          <section className = 'sticky top-0 left-0 w-[100%] bg-[#FFFFFF]'>
-           <main className = 'container mx-auto px-4 py-3'>
+          <section className = 'sticky top-0 left-0 w-[100%] z-[1000] bg-[#FFFFFF]'>
+           <main className = 'container mx-auto px-4 lg:px-12 py-3'>
                <section className = 'flex justify-between items-center'>
                    <div className = 'w-[64px] md:w-[73px] lg:w-[73px]'>
                        <img src= {pz} alt="" className = 'w-[100%]'/>
@@ -117,6 +117,7 @@ const Navbar = () => {
            </main>
           </section>
            <Outlet/>
+           <Footer/>
         </>
     )
 }

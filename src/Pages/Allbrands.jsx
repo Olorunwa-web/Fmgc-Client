@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Prefooter from '../Components/Prefooter';
+
 
 const Allbrands = () => {
     return (
-        <div>
-            all brands
-        </div>
+        <section>
+            <Prefooter/>
+        </section>
     )
 }
 
