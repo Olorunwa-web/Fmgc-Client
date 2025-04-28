@@ -1,19 +1,37 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import homeBackground from '../assets/abstract-geometric-white-and-gray-on-light-silver-gradient-background-modern-banner-design-illustration-free-vector 1.jpg'
 import arrowright from '../assets/arrow-right.svg';
 import pzimage from '../assets/image 15.jpg';
 import midimage from '../assets/w=1024 1.jpg';
 import pzcussion from '../assets/Frame 140.jpg';
-import annualimg from '../assets/annual-report-2024-1 1.jpg';
+import annualimg from '../assets/annual-report-2024-1 1.png';
 import climbimg from '../assets/iStock-649871644_LRG-scaled 1.jpg';
-import calimg from '../assets/45275_PZ_factsheet_web_banner_v02 1.jpg'
+import calimg from '../assets/45275_PZ_factsheet_web_banner_v02 1.jpg';
+import dot from '../assets/dot-svgrepo-com.svg';
+import gifvid from '../assets/4153588-uhd_4096_2160_25fps.mp4-ezgif.com-video-to-gif-converter.gif';
+import { allbrands } from '../data';
+import { news } from '../data';
+import Swipes from '../Components/Swipes'
+import Prefooter from '../Components/Prefooter';
+
+
+
 
 const Home = () => {
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 9;
+  
+    const totalPages = Math.ceil(allbrands.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const ALL = allbrands.slice(startIndex, startIndex + itemsPerPage);
+
+
     return (
         <>
            <section className = "bg-[url('')] bg-cover h-[148vh] md:h-[80vh] lg:h-[90vh] pt-5 md:pt-0 md:flex justify-center items-center" style = {{ backgroundImage: `url(${homeBackground})` }}>
-               <section className = 'container mx-auto px-4  '>
+               <section className = 'container mx-auto px-4 lg:px-12 '>
                    <div className = 'flex flex-col gap-5'>
                        <div>
                           <h1 className = 'mb-2 font-[700] text-center font-barlow text-[40px] md:text-[60px] lg:text-[80px] text-[#13294B] leading-[45px] md:leading-[65.8px] w-[100%]'>FOR EVERYONE, FOR LIFE,</h1>
@@ -27,11 +45,12 @@ const Home = () => {
                            </div>
                        </div>
                        <div className = 'flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0'>
-                           <div className = ' bg-[#FFFFFF]  w-[80%]  md:w-[24%] lg:w-[22%] h-[180px] md:h-[170px] flex justify-center items-center rounded-[11px]'>
-                               <img src= {pzimage} alt="" className = 'w-[33%] md:w-[110px] '/>
+                           <div className = '  w-[80%] md:w-[24%] lg:w-[23%]  md:h-[170px]  rounded-[11px]'>
+                               {/* <img src= {pzimage} alt="" className = 'w-[33%] md:w-[110px] '/> */}
+                               <Swipes/>
                            </div>
                            <div className = 'lg:w-[55%] md:w-[50%] flex flex-col md:flex-row items-center justify-center'>
-                               <img src= {midimage} alt="" className = ' md:w-[100%] lg:w-[80%] rounded-[11px]'/>
+                               <img src= {midimage} alt="" className = ' md:w-[100%] lg:w-[83%] rounded-[11px]'/>
                            </div>
                            <div className = 'lg:w-[22%] w-[80%] md:w-[24%] md:h-[170px] bg-[#C60C30] rounded-[11px] flex justify-center items-center h-[200px]'>
                                {/* <img src= {pzcussion} alt="" className = 'w-[100%] h-[100%]'/> */}
@@ -45,7 +64,7 @@ const Home = () => {
            {/*  */}
 
            <section className = 'bg-[#FFFFFF] py-7 my-7'>
-               <section className = 'container mx-auto px-4'>
+               <section className = 'container mx-auto px-4 lg:px-12'>
                    <section className = 'flex flex-col gap-4' >
                        <section className = 'rounded-[14px] px-[24px] py-4 bg-[#E7E7E7] w-[100%] flex flex-col  md:flex-row md:gap-[0px] gap-[20px] items-center justify-between'>
                           <div className = 'w-[100%] md:w-[31%] lg:w-[30%] '>
@@ -57,7 +76,7 @@ const Home = () => {
                                  <span className = 'text-[#C60C30] text-[14px] leading-[28px] font-[500]'>Read our Annual Report and Accounts 2024.</span>
                               </div>
                           </div>
-                          <div className = ' md:flex items-center justify-center w-[100%] md:w-[31%] lg:w-[30%]'>
+                          <div className = ' md:flex items-center justify-end w-[100%] md:w-[31%] lg:w-[30%]'>
                               <img src= {annualimg} alt="" className = ' w-[100%] md:w-[100%] lg:w-[82%]'/>
                           </div>
                        </section>
@@ -102,43 +121,136 @@ const Home = () => {
            {/*  */}
 
 
-           <section>
-               <h1>Discover Our Must win Brands</h1>
-               <section className = 'container mx-auto px-4'>
+           <section className = 'container mx-auto px-4 lg:px-12'>
+               <h1 className ='py-4  text-[#13294B] text-[27px] md:text-[32px] lg:text-[35px] font-bold leading-[34px] text-center '>Discover Our Must win Brands</h1>
+               <section className = 'my-7'>
+                   <section className = 'md:flex md:flex-wrap justify-between items-center'>
+                       {ALL.map((product)=> {
+                           const {id, Image, title, use1, use2, use3, use4 } = product
+                           return (
+                               <div key = {id} className = 'w-[100%] mb-[2.3rem] md:mb-[3rem]  md:w-[46%] lg:w-[28.7%]'>
+                                   <div className = 'flex flex-col gap-2'>
+                                       <div className = 'relative group'>
+                                         <img src= {Image} alt="" className = 'w-[100%] cursor-pointer'/>
+                                         <div className = ''>
+                                          <div className = 'bg-[#FFFFFF] rounded-tl-[5px] rounded-tr-[5px] w-[100%] absolute top-0 py-4 ps-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
+                                             <h3 className = 'text-[#000000] text-[16px] font-[500]'>FEATURES</h3>
+                                             <div className = 'flex flex-col gap-1'>
+                                                 <div className = 'flex items-center'>
+                                                     <img src= {dot} alt="" className = 'w-[17px]'/>
+                                                     <span className = 'text-[#000000] text-[14px] font-[500] mt-1'>{use1}</span>
+                                                 </div>
+                                                 <div className = 'flex items-center'>
+                                                     <img src= {dot} alt="" className = 'w-[17px]'/>
+                                                     <span className = 'text-[#000000] text-[14px] font-[500] mt-1' >{use2}</span>
+                                                 </div>
+                                                 <div className = 'flex items-center'>
+                                                     <img src= {dot} alt="" className = 'w-[17px]'/>
+                                                     <span className = 'text-[#000000] text-[14px] font-[500] mt-1'>{use3}</span>
+                                                 </div>
+                                                 <div className = 'flex items-center'>
+                                                     <img src= {dot} alt="" className = 'w-[17px] '/>
+                                                     <span className = 'text-[#000000] text-[14px] font-[500] mt-1'>{use4}</span>
+                                                 </div>
+                                             </div>
+                                          </div>
+                                         </div>
+                                       </div>
+                                       <div>
+                                          <h4 className = 'text-[#000000] text-[17px] md:text-[19px] font-[400]' >{title}</h4>
+                                       </div>
+                                   </div>
+                               </div>
+                           )
+                       })}
+                   </section>
+
+                   <section className = 'my-3'>
+                      <div className="flex justify-center   space-x-2">
+                          {[...Array(totalPages)].map((_, index) => {
+                             const page = index + 1;
+                             const isActive = page === currentPage;
+
+                               return (
+                                     <button
+                                        key={page}
+                                        onClick={() => setCurrentPage(page)}
+                                        className={` md:w-[44px] md:h-[44px] w-[40px] h-[40px] border rounded-[6px] ${
+                                          isActive
+                                        ? " bg-[#C60C30] text-white text-[16.32px] md:text-[17.32px] font-medium"
+                                        : " bg-white text-[16.32px] md:text-[17.32px] font-medium text-[#A3A3A3] border-[#A3A3A3]"
+                                       }`}>
+                                        {page}
+                                    </button>
+                                 );
+                            })}
+                        </div>
+                   </section>
+               </section>
+
+               {/*  */}
+
+               <section className = 'pb-10'>
+                   <h1 className = 'pt-2 pb-10  text-[#13294B] text-[27px] md:text-[32px] lg:text-[35px] font-bold leading-[34px] text-center ' >Latest News</h1>
+                   <section>
+                       <section className = 'md:flex md:flex-wrap justify-between items-cente'>
+                           {news.map((report)=> {
+                              const {id, IMAGE, news, date} = report
+                              return (
+                                  <div key = {id} className = 'w-[100%]  mb-[2.3rem] md:mb-[0px]  md:w-[47%] lg:w-[31%]'>
+                                      <div className = 'flex flex-col gap-4'>
+                                          <div className = 'w-[100%] '>
+                                              <img src= {IMAGE} alt="" className = 'w-[100%] md:h-[300px]'/>
+                                          </div>
+                                          <div className = 'flex items-center gap-6'>
+                                              <button className = 'bg-[#FCE8EB] text-[13.05px] text-[#E31837] leading-[26.1px] font-medium px-[13.05px] py-[4.66px] rounded-[27.97px]'>corporate</button>
+                                              <span className = 'text-[#13294B] text-[11.19px] leading-[26.1px] font-[400px] '>{date}</span>
+                                          </div>
+                                          <div>
+                                              <p className = 'text-[#13294B]  text-[17px] md:text-[18px] leading-[26.1px] font-medium'>{news}</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              )
+                           })}
+                       </section>
+                   </section>
+               </section>
+               {/* <section className = 'container mx-auto px-4'>
                    <section className = 'flex justify-between items-center'>
                        <section className = 'flex gap-3'>
                        <NavLink
                          to="/home/allbrands"
                          end
-                         className={({ isActive }) =>
-                         isActive
+                         className={({ isActive:  Dctive }) =>
+                        (Dctive
                            ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "}>
+                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] ")}>
                            All Brands
                       </NavLink>
                        <NavLink
                          to="/home/hygiene"
                          end
-                         className={({ isActive }) =>
-                         isActive
+                         className={({ isActive: active }) =>
+                         (active
                            ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "}>
+                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] ")}>
                            Hygiene
                       </NavLink>
                        <NavLink
                          to="/home/beauty"
                          end
-                         className={({ isActive }) =>
-                         isActive
+                         className={({ isActive: active }) =>
+                         (active
                            ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "}>
+                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] ")}>
                            Beauty
                       </NavLink>
                        <NavLink
                          to="/home/baby"
                          end
-                         className={({ isActive }) =>
-                         isActive
+                         className={({ isActive: active }) =>
+                         active
                            ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
                            : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "}>
                            Baby
@@ -149,8 +261,9 @@ const Home = () => {
                            <input type="search" name="" id=""/>
                        </section>
                    </section>
-               </section>
+               </section> */}
            </section>
+           <Prefooter/>
            <Outlet/>
         </>
     )

@@ -1,10 +1,11 @@
 import React from 'react'
+import Prefooter from '../Components/Prefooter';
 
 const About = () => {
     return (
-        <div>
-            about
-        </div>
+       <section>
+           <Prefooter/>
+       </section>
     )
 }
 
