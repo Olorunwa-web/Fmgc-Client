@@ -4,7 +4,7 @@ import homeBackground from '../assets/abstract-geometric-white-and-gray-on-light
 import arrowright from '../assets/arrow-right.svg';
 import pzimage from '../assets/image 15.jpg';
 import midimage from '../assets/w=1024 1.jpg';
-import pzcussion from '../assets/Frame 140.jpg';
+// import pzcussion from '../assets/Frame 140.jpg';
 import annualimg from '../assets/annual-report-2024-1 1.jpg';
 import climbimg from '../assets/iStock-649871644_LRG-scaled 1.jpg';
 import calimg from '../assets/45275_PZ_factsheet_web_banner_v02 1.jpg'
