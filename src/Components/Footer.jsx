@@ -14,8 +14,8 @@ const Footer = () => {
         <>
             <section>
                 <section className = 'bg-[#BA0F22]'>
-                    <section className = 'container mx-auto px-4 lg:px-12 md:py-10 '>
-                       <section className = 'flex flex-col md:flex-row md:justify-between justify-cneter  gap-6 py-7'>
+                    <section className = 'container mx-auto px-4 lg:px-12 md:py-5 '>
+                       <section className = 'flex flex-col md:flex-row md:justify-between justify-cneter gap-6 py-5'>
                            <div className = 'lg:w-[43%] md:w-[60%] w-[100%]'>
                                <h1 className = 'md:w-[90%] lg:w-[100%] text-[#FFFFFF] text-[30px] md:text-[33px] lg:text-[47px] font-medium '>Stay in the know with PZ Cussons. Subscribe today!</h1>
                            </div>
@@ -90,7 +90,7 @@ const Footer = () => {
                     {/*  */}
                     <hr className = 'border-[#FFFFFF] '/>
                     <section className = 'container mx-auto px-4 lg:px-12'>
-                        <div className = 'flex flex-col md:flex-row justify-between  py-10'>
+                        <div className = 'flex flex-col md:flex-row justify-between py-7'>
                            <div className = 'flex items-center gap-1'>
                                <span className = 'text-[#FFFFFF] text-[20px] font-normal '>&copy;</span>
                                <span className = 'text-[#FFFFFF] text-[14px] font-normal '>PZ Cussons 2025. All right reserved.</span>
