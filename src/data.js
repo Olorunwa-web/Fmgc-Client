@@ -1,4 +1,4 @@
-import image1 from './assets/Frame 1171276230.jpg';
+import image1 from './assets/Frame 1171276230.png';
 import image2 from './assets/Component 19.jpg';
 import image3 from './assets/Frame 1171276229.jpg';
 import image4 from './assets/Frame 1171276228.jpg';
@@ -17,7 +17,65 @@ import image14 from './assets/285634_grocerjonathanmyers32_17937 1.jpg';
 import image17 from './assets/PZ-Cussons 1.jpg';
 
 
+export const navs = [
+    {
+        id: 1,
+        head: "Home",
+        path: '/',
+    },
+    {
+        id: 2,
+        head: "About Us",
+        path: '/about',
+    },
+    {
+        id: 3,
+        head: "Our Brands",
+        path: '/ourbrand',
+    },
+    {
+        id: 4,
+        head: "Contact Us",
+        path: '/contact',
+    },
+
+]
+
+
+export const ourbrand = [
+    {
+        id: 1,
+        head: "All brands",
+        path: '/ourbrand/allbrands',
+    },
+    {
+        id: 2,
+        head: "Hygiene",
+        path: '/ourbrand/hygiene',
+    },
+    {
+        id: 3,
+        head: "Beauty",
+        path: '/ourbrand/beauty',
+    },
+    {
+        id: 4,
+        head: "Baby",
+        path: '/ourbrand/baby',
+    },
+    {
+        id: 5,
+        head: "Other brands",
+        path: '/ourbrand/otherbrand',
+    },
+
+]
+
+
+
+
 export const allbrands = [
+
     {
         id:1,
         Image: image1,
@@ -263,27 +321,27 @@ export const allbrands = [
         use2: 'Gentle on the skin',
         use3: 'Smoother texture',
         use4: 'Safe for all skin types.',
-
     },
+
 
 ]
 
 
 export const news = [
     {
-        id:1,
+        id: 1,
         IMAGE: image13,
         date: '18 September 2024',
-        news: 'Preliminary Results 2024: due to the 70% devaluation of the Nigerian Naira, which impacted revenues and profits.'
+        news: 'Preliminary Results 2024: due to the 70% devaluation of the Nigerian Naira, which impacted revenues and profits.',
     },
     {
-        id:2,
+        id: 2,
         IMAGE: image14,
         date: '11 December 2025',
         news: 'PZ Cussons transform data analytics with Microsoft Fabrics, improving decision-making and efficiency.',
     },
     {
-        id:3,
+        id: 3,
         IMAGE: image17,
         date: '11 Feburary 2025',
         news: 'Interim Results 2025: for the six months ended 30 November 2024 highlight solid trading performance in key markets',

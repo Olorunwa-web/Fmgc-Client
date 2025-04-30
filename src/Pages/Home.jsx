@@ -30,7 +30,7 @@ const Home = () => {
 
     return (
         <>
-           <section className = "bg-[url('')] bg-cover h-[148vh] md:h-[80vh] lg:h-[90vh] pt-5 md:pt-0 md:flex justify-center items-center" style = {{ backgroundImage: `url(${homeBackground})` }}>
+           <section className = "bg-[url('')] bg-cover py-12 flex justify-center items-center" style = {{ backgroundImage: `url(${homeBackground})` }}>
                <section className = 'container mx-auto px-4 lg:px-12 '>
                    <div className = 'flex flex-col gap-5'>
                        <div>
