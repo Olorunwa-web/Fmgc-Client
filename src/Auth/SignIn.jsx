@@ -7,6 +7,7 @@ import { FaFacebook, FaApple } from "react-icons/fa6";
 import { useGoogleLogin } from "@react-oauth/google";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
+import { PiBackspaceFill } from "react-icons/pi";
 
 
 const SignIn = () => {
@@ -46,11 +47,14 @@ const SignIn = () => {
     }
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:4000/api/auth/signin", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        "https://it-project-server.onrender.com/api/auth/signin",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      );
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Login failed");
@@ -70,7 +74,7 @@ const SignIn = () => {
          console.log("Google Token Response:", tokenResponse);
 
          const res = await axios.post(
-           "http://localhost:4000/api/auth/google",
+           "https://it-project-server.onrender.com/api/auth/google",
            {
              token: tokenResponse.access_token,
            }
@@ -91,10 +95,19 @@ const SignIn = () => {
   return (
     <div className="min-h-screen flex justify-between lg:flex-row">
       <div className="py-2 px-8 w-full lg:w-xl lg:py-10 lg:px-12">
-        <header>
+        <header className="flex justify-between">
           <Link to="/">
             <img className="h-20 w-21" src={logo} alt="Logo" />
           </Link>
+          
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center mt-2 pr-1 lg:hidden"
+            >
+              <PiBackspaceFill className="text-black-700" size={35} />
+              {/* <p className="text-lg text-red-600">Back</p> */}
+            </button>
+          
         </header>
 
         <form onSubmit={handleSubmit} className="relative pt-[4%]">
@@ -174,13 +187,13 @@ const SignIn = () => {
             <button className="border border-gray-400 w-[70px] md:w-[100px] flex items-center justify-center py-2 rounded-sm">
               <FaFacebook size={20} className="text-blue-700" />
             </button>
-             <button
-                          onClick={() => googleSignin()}
-                          className="border border-gray-400 rounded-sm w-[70px] md:w-[100px] flex items-center justify-center py-2"
-                          title="Sign in with Google"
-                        >
-                          <FcGoogle size={20} />
-                        </button>
+            <button
+              onClick={() => googleSignin()}
+              className="border border-gray-400 rounded-sm w-[70px] md:w-[100px] flex items-center justify-center py-2"
+              title="Sign in with Google"
+            >
+              <FcGoogle size={20} />
+            </button>
             <button className="border border-gray-400 w-[70px] md:w-[100px] flex items-center justify-center py-2 rounded-sm ">
               <FaApple size={20} />
             </button>
@@ -188,11 +201,7 @@ const SignIn = () => {
         </form>
       </div>
 
-      <img
-        className="hidden lg:flex w-1/2 h-screen"
-        src={image}
-        alt=""
-      />
+      <img className="hidden lg:flex w-1/2 h-screen" src={image} alt="" />
     </div>
   );
 };

@@ -16,7 +16,7 @@ const PasswordReset = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:4000/api/auth/forgot-password",
+        "https://it-project-server.onrender.com/api/auth/forgot-password",
         {
           method: "POST",
           headers: {

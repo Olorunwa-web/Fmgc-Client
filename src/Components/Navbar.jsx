@@ -5,7 +5,7 @@ import harmburg from '../assets/menu_34dp_000000_FILL0_wght400_GRAD0_opsz40.svg'
 import harmburgclose from '../assets/close_32dp_000000_FILL0_wght400_GRAD0_opsz40.svg';
 import { AuthContext } from "../Auth/context/AuthContext";
 import { useContext } from 'react';
-import Footer from '../Components/Footer'
+import Footer from '../Components/Footer';
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
@@ -13,7 +13,7 @@ const Navbar = () => {
 
     return (
       <>
-        <section className="sticky top-0 left-0 w-[100%] bg-[#FFFFFF] z-999">
+        <section className="sticky top-0 left-0 w-[100%] bg-[#FFFFFF] z-[999]">
           <main className="container mx-auto px-4 py-3">
             <section className="flex justify-between items-center">
               <div className="w-[64px] md:w-[73px] lg:w-[73px]">
@@ -62,17 +62,36 @@ const Navbar = () => {
                   Contact Us
                 </NavLink>
               </div>
-              <div className="hidden md:flex gap-4">
-                <Link to="/auth/signin">
-                  <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C] hover:text-[#FFFFFF]">
-                    Log In
-                  </button>
-                </Link>
-                <Link to="/auth/signup">
-                  <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF]">
-                    Sign up
-                  </button>
-                </Link>
+              <div className=" hidden md:flex gap-3">
+                {user ? (
+                  <div className="flex gap-3">
+                    <img
+                      className="w-10 h-10 rounded-full border-red-900"
+                      src={user?.image || "/Ellipse 8.png"}
+                      alt=""
+                    />
+                    <button
+                      onClick={logout}
+                      className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF]"
+                    >
+                      Log out
+                    </button>
+                  </div>
+                ) : (
+                  <>
+                    <NavLink to="/auth/signin">
+                      <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C] hover:text-[#FFFFFF]">
+                        Log in
+                      </button>
+                    </NavLink>
+
+                    <NavLink to="/auth/signup">
+                      <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF]">
+                        Sign up
+                      </button>
+                    </NavLink>
+                  </>
+                )}
               </div>
               <div className="md:hidden flex">
                 <div onClick={() => setIsOpen(true)}>
@@ -85,7 +104,7 @@ const Navbar = () => {
                   <div className="">
                     <div className="px-3 py-5 flex flex-col justify-between h-[80vh]">
                       <div
-                        className="flex justify-end items-cenetr"
+                        className="flex justify-end items-center"
                         onClick={() => setIsOpen(false)}
                       >
                         <img src={harmburgclose} alt="" className="w-[30px]" />
@@ -94,8 +113,8 @@ const Navbar = () => {
                         <NavLink
                           to="/"
                           end
-                          className={({ isPctive }) =>
-                            isPctive
+                          className={({ isActive }) =>
+                            isActive
                               ? " font-medium text-[16px] text-[#E31B37] leading-[28px]  w-[47px] border-b-2"
                               : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "
                           }
@@ -105,8 +124,8 @@ const Navbar = () => {
                         <NavLink
                           to="/about"
                           end
-                          className={({ isPctive }) =>
-                            isPctive
+                          className={({ isActive }) =>
+                            isActive
                               ? " font-medium text-[16px] text-[#E31B37] leading-[28px] w-[78px] border-b-2"
                               : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "
                           }
@@ -116,8 +135,8 @@ const Navbar = () => {
                         <NavLink
                           to="/ourbrand"
                           end
-                          className={({ isPctive }) =>
-                            isPctive
+                          className={({ isActive }) =>
+                            isActive
                               ? " font-medium text-[16px] text-[#E31B37] leading-[28px] w-[98px] border-b-2"
                               : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "
                           }
@@ -127,8 +146,8 @@ const Navbar = () => {
                         <NavLink
                           to="/contact"
                           end
-                          className={({ isPctive }) =>
-                            isPctive
+                          className={({ isActive }) =>
+                            isActive
                               ? " font-medium text-[16px] text-[#E31B37] leading-[28px] w-[97px] border-b-2"
                               : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "
                           }
@@ -136,22 +155,34 @@ const Navbar = () => {
                           Contact Us
                         </NavLink>
                       </div>
-                      <div className=" ps-4 flex flex-col gap-4 ">
+                      <div className=" ps-4 flex flex-col gap-2 ">
                         {user ? (
-                          <div>
-                            <img src={user.image} alt="" />
-                            <button onClick={logout} className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF]">
+                          <div className="">
+                            <img
+                              className="w-10 h-10 rounded-full border-red-900"
+                              src={user?.image || "/Ellipse 8.png"}
+                              alt=""
+                            />
+                            <button
+                              onClick={logout}
+                              className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF] mt-1"
+                            >
                               Log out
                             </button>
                           </div>
                         ) : (
                           <>
-                            <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C] hover:text-[#FFFFFF]">
-                              Log In
-                            </button>
-                            <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF]">
-                              Sign up
-                            </button>
+                            <NavLink to="/auth/signin">
+                              <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C] hover:text-[#FFFFFF]">
+                                Log in
+                              </button>
+                            </NavLink>
+
+                            <NavLink to="/auth/signup">
+                              <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF]">
+                                Sign up
+                              </button>
+                            </NavLink>
                           </>
                         )}
                       </div>
@@ -163,9 +194,9 @@ const Navbar = () => {
           </main>
         </section>
         <Outlet />
-        <Footer/>
-        </>
-    )
+        <Footer />
+      </>
+    );
 
 }
 
