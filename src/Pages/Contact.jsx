@@ -1,6 +1,72 @@
 import React from "react";
+import image from "../assets/image 43.png";
+import axios from "axios";
+import { useState } from "react";
 
 const Contact = () => {
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    location: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(""); // Clear previous error
+    setLoading(true); // Start loading
+
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.location ||
+      !formData.message
+    ) {
+      setLoading(false);
+      setError("Please fill in all the fields.");
+      // alert("Please fill in all the fields.");
+      return;
+    }
+
+    try {
+      const res = await axios.post(
+        "https://it-project-server.onrender.com/api/contact",
+        formData,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      alert(res.data.message);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        location: "",
+        message: "",
+      });
+    } catch (err) {
+      console.error(err);
+      const errorMsg = err.response?.data?.error || "Something went wrong!";
+      setError(errorMsg);
+      alert(errorMsg);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
   const locationCard = [
     {
       id: 1,
@@ -10,82 +76,113 @@ const Contact = () => {
     },
     {
       id: 2,
-      locationTag: "UK HD",
+      locationTag: "Nigeria",
       address:
-        "PZ Cussons Manchester Business park 3500 Aviator Way Manchester M1234",
+        "45/47 Town Planning Way Illupeju Industrial Estate  Ikeja Lagos Nigeria",
     },
     {
       id: 3,
-      locationTag: "UK HD",
+      locationTag: "Easter Africa",
       address:
-        "PZ Cussons Manchester Business park 3500 Aviator Way Manchester M1234",
+        "PZ Cussons East Africa Ltd. Bada Dogo Road  P.O Box Area Nairobi Kenya",
     },
     {
       id: 4,
-      locationTag: "UK HD",
+      locationTag: "West Africa",
       address:
-        "PZ Cussons Manchester Business park 3500 Aviator Way Manchester M1234",
+        "Plot 27/3-27/7 Sanyo Road Toma Heavy Industrial Area P.O Box 628, Tema, Ghana",
     },
     {
       id: 5,
-      locationTag: "UK HD",
+      locationTag: "Australia",
       address:
         "PZ Cussons Manchester Business park 3500 Aviator Way Manchester M1234",
     },
     {
       id: 6,
-      locationTag: "UK HD",
+      locationTag: "Indonesia",
       address:
-        "PZ Cussons Manchester Business park 3500 Aviator Way Manchester M1234",
+        "45/47 Town Planning Way Illupeju Industrial Estate  Ikeja Lagos Nigeria",
     },
     {
       id: 7,
-      locationTag: "UK HD",
+      locationTag: "Singapore",
       address:
-        "PZ Cussons Manchester Business park 3500 Aviator Way Manchester M1234",
+        "Plot 27/3-27/7 Sanyo Road Toma Heavy Industrial Area P.O Box 628, Tema, Ghana",
     },
   ];
 
   return (
     <div>
-      <section className="bg-[#B50606] py-[10%] px-10 text-white lg:py-[5%]">
-        <h1 className="lg:block text-center text-5xl lg:text-7xl pb-5 font-bold">
-          Contact Us
-        </h1>
-        <p className="text-md text-center">PZ will like to connect with you</p>
+      <section className="bg-[#B50606] text-white pb-15 px-6 relative lg:pt-[60px]">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse mt-[-36px] lg:flex-row lg:mt-0 items-center justify-center">
+          <div className="text-center lg:pl-[30%]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+              Contact Us
+            </h1>
+            <p className="text-lg">PZ will like to connect with you</p>
+          </div>
+          <div className="mt-10 lg:-mt-15 lg:ml-10">
+            <img
+              src={image}
+              alt="Contact Icons"
+              className="w-[250px] sm:w-[300px] lg:w-[350px] mx-auto lg:mx-0"
+            />
+          </div>
+        </div>
       </section>
-      <section className="bg-[#E9E9E9] py-16 px-6 text-center">
-        <h1 className="text-3xl font-semibold mb-8">Say Hello</h1>
-        <form className="max-w-4xl mx-auto space-y-6">
+
+      <section className="bg-[#E9E9E9] py-17 px-6 text-center">
+        <form className="max-w-4xl mx-auto space-y-6" onSubmit={handleSubmit}>
+          <h1 className="text-3xl text-left font-semibold mb-8">
+            Send us a Message
+          </h1>
           <div className="flex flex-col lg:flex-row gap-6">
             <input
-              className="flex-1 py-4 px-4 border-2 border-gray-500 rounded-md focus:outline-gray-700"
+              name="firstName"
+              onChange={handleChange}
+              value={formData.firstName}
+              className="flex-1 py-4 px-4 border-2 border-gray-500 rounded-md"
               type="text"
               placeholder="First Name"
             />
             <input
-              className="flex-1 py-4 px-4 border-2 border-gray-500 rounded-md focus:outline-gray-700"
+              name="lastName"
+              onChange={handleChange}
+              value={formData.lastName}
+              className="flex-1 py-4 px-4 border-2 border-gray-500 rounded-md"
               type="text"
               placeholder="Last Name"
             />
           </div>
           <div className="flex flex-col lg:flex-row gap-6">
             <input
-              className="flex-1 py-4 px-4 border-2 border-gray-500 rounded-md focus:outline-gray-700"
+              name="email"
+              onChange={handleChange}
+              value={formData.email}
+              className="flex-1 py-4 px-4 border-2 border-gray-500 rounded-md"
               type="email"
               placeholder="Your Email"
             />
             <input
-              className="flex-1 py-4 px-4 border-2 border-gray-500 rounded-md focus:outline-gray-700"
+              name="location"
+              onChange={handleChange}
+              value={formData.location}
+              className="flex-1 py-4 px-4 border-2 border-gray-500 rounded-md"
               type="text"
               placeholder="Location"
             />
           </div>
           <textarea
-            className="w-full py-4 px-4 border-2 border-gray-500 rounded-md h-40 focus:outline-gray-700"
+            name="message"
+            onChange={handleChange}
+            value={formData.message}
+            className="w-full py-4 px-4 border-2 border-gray-500 rounded-md h-40"
             placeholder="Message"
           ></textarea>
-          <button className="bg-red-800 hover:bg-red-400 transition py-3 px-15 text-white rounded-md">
+          {loading && <p className="text-blue-600 font-semibold">Sending...</p>}
+          {error && <p className="text-red-600 font-semibold">{error}</p>}
+          <button className="bg-red-800 hover:bg-red-400 transition py-5 w-full text-white rounded-md">
             Contact Us
           </button>
         </form>
@@ -99,9 +196,9 @@ const Contact = () => {
                   {card.locationTag}
                 </h1>
                 <p className="py-5 px-15 text-lg">{card.address}</p>
-                <button className="bg-red-500 text-white py-2 px-4 items-center rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                {/* <button className="bg-red-500 text-white py-2 px-4 items-center rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                   Email
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
