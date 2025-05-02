@@ -29,6 +29,7 @@ const Footer = () => {
       }
     };
     return (
+
       <>
         <section>
           <section className="bg-[#BA0F22]">
