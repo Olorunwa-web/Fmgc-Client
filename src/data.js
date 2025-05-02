@@ -1,20 +1,33 @@
 import image1 from './assets/Frame 1171276230.png';
-import image2 from './assets/Component 19.jpg';
-import image3 from './assets/Frame 1171276229.jpg';
-import image4 from './assets/Frame 1171276228.jpg';
-import image5 from './assets/Frame 1171276227.jpg';
-import image6 from './assets/Frame 1171276233.jpg';
-import image7 from './assets/Frame 1171276234.jpg';
-import image8 from './assets/Frame 1171276235.jpg';
-import image9 from './assets/Frame 1171276231.jpg';
+import image2 from './assets/Component 19.png';
+import image3 from './assets/Frame 1171276229.png';
+import image4 from './assets/Frame 1171276228.png';
+import image5 from './assets/Frame 1171276227.png';
+import image6 from './assets/Frame 1171276233.png';
+import image7 from './assets/Frame 1171276234.png';
+import image8 from './assets/Frame 1171276235.png';
+import image9 from './assets/Frame 1171276231.png';
 import image10 from './assets/Frame 1171276232.jpg';
-import image11 from './assets/Component 20.jpg';
-import image12 from './assets/Component 18.jpg';
+import image11 from './assets/Component 20.png';
+import image12 from './assets/Component 18.png';
 // ===========================================
 
-import image13 from './assets/91792598-0e17-4c3a-9160-84d8b797f3d2 1.jpg';
-import image14 from './assets/285634_grocerjonathanmyers32_17937 1.jpg';
-import image17 from './assets/PZ-Cussons 1.jpg';
+import image13 from './assets/91792598-0e17-4c3a-9160-84d8b797f3d2 1.png';
+import image14 from './assets/285634_grocerjonathanmyers32_17937 1.png';
+import image17 from './assets/PZ-Cussons 1.png';
+// ============================================
+
+import image18 from './assets/Frame 1171276284.png'
+import image19 from './assets/Frame 1171276282.png'
+import image20 from './assets/Frame 1171276288.png'
+import image21 from './assets/Frame 1171276289.png'
+import image22 from './assets/Frame 1171276291.png'
+import image23 from './assets/Frame 1171276293.png'
+import image24 from './assets/Frame 1171276292.png'
+import image25 from './assets/Frame 1171276286.png'
+import image26 from './assets/Frame 1171276287.png'
+import image27 from './assets/Frame 1171276285.png'
+import image28 from './assets/Frame 1171276290.png'
 
 
 export const navs = [
@@ -323,9 +336,454 @@ export const allbrands = [
         use4: 'Safe for all skin types.',
     },
 
-
 ]
 
+export const ALLBRANDS = [
+    {
+        id:1,
+        Image: image6,
+        title:'Clorox Hand Sanitizer',
+        use1: 'Kill germs.',
+        use2: 'Improves skin condition.',
+        use3: 'Less time hand washing',
+        use4: 'Reducing bacterial counts on hands.',
+
+    },
+    {
+        id:2,
+        Image: image2,
+        title:'Beyou Baby Set',
+        use1: 'For soft skin.',
+        use2: 'Gentle on the skin',
+        use3: 'Smoother texture',
+        use4: 'Safe for all skin types.',
+
+    },
+    {
+        id:3,
+        Image: image5,
+        title:'Cosmetic Body Cleanser',
+        use1: 'Makes the skin healthy',
+        use2: 'Makes the skin hygienic.',
+        use3: 'Retains skin moisture for long',
+        use4: 'Suitable for skin blemishes.',
+    },
+    {
+        id:4,
+        Image: image4,
+        title:'Botanical Origin Detergent',
+        use1: 'Fresh scent.',
+        use2: 'Remove stains.',
+        use3: 'Gentle on Fabrics',
+        use4: 'Cleans clothes and dishes.',
+    },
+    {
+        id:5,
+        Image: image3,
+        title:'Blub Bomb Soap',
+        use1: 'Gentle on clothes.',
+        use2: 'Versatile cleaning.',
+        use3: 'Less water usage',
+        use4: 'Natural ingredients',
+
+       
+    },
+    {
+        id:6,
+        Image: image1,
+        title:'Pharma Hemp Balm',
+        use1: 'For cold.',
+        use2: 'For catarrh.',
+        use3: 'For dry skin',
+        use4: 'Skin irritation and insect bite.',
+    },
+    {
+        id:7,
+        Image: image9,
+        title:'Cosmetics Sweet Caramel',
+        use1: 'Suitable for all skin types',
+        use2: 'Retains skin moisture for long.',
+        use3: 'Cleanses and nourishes the skin.',
+        use4: 'Enriched with natural ingredients.',
+    },
+    {
+        id:8,
+        Image: image8,
+        title:'Mendes Rose Oil',
+        use1: 'Suitable for all skin types.',
+        use2: 'Retains skin moisture for long.',
+        use3: 'Cleanses and nourishes the skin.',
+        use4: 'Enriched with natural ingredients.',
+    },
+    {
+        id:9,
+        Image: image7,
+        title:'Neauthy Skin Care',
+        use1: 'Smoothens the skin.',
+        use2: 'Nourishes dry skin.',
+        use3: 'Aids skin nurition.',
+        use4: 'Enriched with natural ingredients.',
+    },
+    {
+        id:10,
+        Image: image12,
+        title:'Bioglow Sunscreen & Body Oil',
+        use1: 'Makes the skin healthy',
+        use2: 'Makes the skin hygienic.',
+        use3: 'Retains skin moisture for long',
+        use4: 'Suitable for skin blemishes.',
+    },
+    {
+        id:11,
+        Image: image10,
+        title:'Oil Power',
+        use1: 'Smoothens the skin.',
+        use2: 'Nourishes dry skin.',
+        use3: 'Aids skin nurition.',
+        use4: 'Enriched with natural ingredients.',
+    },
+    {
+        id:12,
+        Image: image11,
+        title:'Soft Lather Bar Soap',
+        use1: 'Gentle on clothes.',
+        use2: 'Versatile cleaning.',
+        use3: 'Less water usage',
+        use4: 'Natural ingredients',
+    },
+    {
+        id:13,
+        Image: image18,
+        title:'Kraft Hair Gel',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:14,
+        Image: image19,
+        title:'Batch Muscle Gel',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:15,
+        Image: image20,
+        title:'Eourja Beauty Cream',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:16,
+        Image: image21,
+        title:'Nivea Sodt Sponge Set',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:17,
+        Image: image5,
+        title:'Cosmetic Body Cleanser',
+        use1: 'Makes the skin healthy',
+        use2: 'Makes the skin hygienic.',
+        use3: 'Retains skin moisture for long',
+        use4: 'Suitable for skin blemishes.',
+    },
+    {
+        id:18,
+        Image: image22,
+        title:'Smiliies Toilet Paper',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:19,
+        Image: image23,
+        title:'Woodle Tooth Brush',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:20,
+        Image: image24,
+        title:'Oral B Dental Floss',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:21,
+        Image: image25,
+        title:'Eourja Baby Balm',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:23,
+        Image: image26,
+        title:'Aloe Set',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:24,
+        Image: image27,
+        title:'Thick Brown Set',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:25,
+        Image: image28,
+        title:'Natracare Intimate Wipes',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    
+]
+
+
+export const hygiene = [
+    {
+        id:1,
+        Image: image28,
+        title:'Natracare Intimate Wipes',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:2,
+        Image: image21,
+        title:'Nivea Sodt Sponge Set',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:3,
+        Image: image24,
+        title:'Oral B Dental Floss',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:4,
+        Image: image4,
+        title:'Botanical Origin Detergent',
+        use1: 'Fresh scent.',
+        use2: 'Remove stains.',
+        use3: 'Gentle on Fabrics',
+        use4: 'Cleans clothes and dishes.',
+    },
+    {
+        id:5,
+        Image: image1,
+        title:'Pharma Hemp Balm',
+        use1: 'For cold.',
+        use2: 'For catarrh.',
+        use3: 'For dry skin',
+        use4: 'Skin irritation and insect bite.',
+
+    },
+    {
+        id:6,
+        Image: image22,
+        title:'Smiliies Toilet Paper',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:7,
+        Image: image10,
+        title:'Oil Power',
+        use1: 'Smoothens the skin.',
+        use2: 'Nourishes dry skin.',
+        use3: 'Aids skin nurition.',
+        use4: 'Enriched with natural ingredients.',
+    },
+    {
+        id:8,
+        Image: image23,
+        title:'Woodle Tooth Brush',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:9,
+        Image: image21,
+        title:'Nivea Sodt Sponge Set',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:10,
+        Image: image28,
+        title:'Natracare Intimate Wipes',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:11,
+        Image: image4,
+        title:'Botanical Origin Detergent',
+        use1: 'Fresh scent.',
+        use2: 'Remove stains.',
+        use3: 'Gentle on Fabrics',
+        use4: 'Cleans clothes and dishes.',
+    },
+    {
+        id:12,
+        Image: image22,
+        title:'Smiliies Toilet Paper',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:13,
+        Image: image10,
+        title:'Oil Power',
+        use1: 'Smoothens the skin.',
+        use2: 'Nourishes dry skin.',
+        use3: 'Aids skin nurition.',
+        use4: 'Enriched with natural ingredients.',
+    },
+    {
+        id:14,
+        Image: image23,
+        title:'Woodle Tooth Brush',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:15,
+        Image: image24,
+        title:'Oral B Dental Floss',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:16,
+        Image: image21,
+        title:'Nivea Sodt Sponge Set',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:17,
+        Image: image28,
+        title:'Natracare Intimate Wipes',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:18,
+        Image: image22,
+        title:'Smiliies Toilet Paper',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:19,
+        Image: image4,
+        title:'Botanical Origin Detergent',
+        use1: 'Fresh scent.',
+        use2: 'Remove stains.',
+        use3: 'Gentle on Fabrics',
+        use4: 'Cleans clothes and dishes.',
+    },
+    {
+        id:20,
+        Image: image23,
+        title:'Woodle Tooth Brush',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:21,
+        Image: image1,
+        title:'Pharma Hemp Balm',
+        use1: 'For cold.',
+        use2: 'For catarrh.',
+        use3: 'For dry skin',
+        use4: 'Skin irritation and insect bite.',
+
+    },
+    {
+        id:22,
+        Image: image10,
+        title:'Oil Power',
+        use1: 'Smoothens the skin.',
+        use2: 'Nourishes dry skin.',
+        use3: 'Aids skin nurition.',
+        use4: 'Enriched with natural ingredients.',
+    },
+    {
+        id:23,
+        Image: image21,
+        title:'Nivea Sodt Sponge Set',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+    {
+        id:18,
+        Image: image22,
+        title:'Smiliies Toilet Paper',
+        use1: 'Last longer.',
+        use2: 'Richer lather.',
+        use3: 'Better hydration.',
+        use4: 'More hygienic application.',
+    },
+
+]
 
 export const news = [
     {
