@@ -17,12 +17,17 @@ import './App.css'
 // import SetNewPassword from './Auth/setNewPassword';
 import ForgotPasswordPage from "./Auth/ForgotPasswordPage";
 import SetPassword from './Auth/SetPassword';
-import Footer from './Components/Footer'
+import Footer from './Components/Footer';
+import ScrollTop from './Components/ScrollTop'
+
+
+
 function App() {
 
   return (
     <>
       <BrowserRouter>
+       <ScrollTop/>
         <Routes>
           <Route path="/auth/signin" element={<SignIn />} />
           <Route path="/auth/signup" element={<SignUp />} />

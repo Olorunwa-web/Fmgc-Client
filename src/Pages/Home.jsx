@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState , useEffect, useRef } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import homeBackground from '../assets/abstract-geometric-white-and-gray-on-light-silver-gradient-background-modern-banner-design-illustration-free-vector 1.jpg'
 import arrowright from '../assets/arrow-right.svg';
@@ -21,11 +21,17 @@ const Home = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 9;
+
+    const productContainerRef = useRef(null);
+
   
     const totalPages = Math.ceil(allbrands.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
     const ALL = allbrands.slice(startIndex, startIndex + itemsPerPage);
 
+    useEffect(() => {
+        productContainerRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, [currentPage]);
 
     return (
         <>
@@ -118,10 +124,10 @@ const Home = () => {
            {/*  */}
 
 
-           <section className = 'container mx-auto px-4 lg:px-12'>
+           <section  className = 'container mx-auto px-4 lg:px-12'>
                <h1 className ='py-4  text-[#13294B] text-[27px] md:text-[32px] lg:text-[35px] font-bold leading-[34px] text-center '>Discover Our Must win Brands</h1>
-               <section className = 'my-7'>
-                   <section className = 'md:flex md:flex-wrap justify-between items-center'>
+               <section  className = 'my-7'>
+                   <section   className = 'md:flex md:flex-wrap justify-between items-center'>
                        {ALL.map((product)=> {
                            const {id, Image, title, use1, use2, use3, use4 } = product
                            return (
