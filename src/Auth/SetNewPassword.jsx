@@ -27,7 +27,7 @@ const SetNewPassword = () => {
       }
 
       const res = await axios.post(
-        `http://localhost:4000/api/auth/reset-password/${token}`,
+        `https://it-project-server.onrender.com/api/auth/reset-password/${token}`,
         {
           newPassword,
         },

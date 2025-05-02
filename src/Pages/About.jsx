@@ -12,6 +12,9 @@ import { FaThreads } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa";
 import Prefooter from '../Components/Prefooter';
+import image5 from "../assets/p.png";
+import image6 from "../assets/q.png";
+import image7 from "../assets/r.png";
 
 
 
@@ -40,12 +43,30 @@ import Prefooter from '../Components/Prefooter';
      name: "Vivek Ahuja",
      position: "Senior independent Director",
    },
+   {
+     id: 5,
+     image: image5,
+     name: "Kristy Bashforth",
+     position: "Non-Executive Director",
+   },
+   {
+     id: 6,
+     image: image6,
+     name: "Jitesh Sodha",
+     position: "Non-Executive Director",
+   },
+   {
+     id: 7,
+     image: image7,
+     name: "Valeria Juarez",
+     position: "Non-Executive Director",
+   },
  ];
 
 const About = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const leadersPerPage = 4;
-    const desiredPages = 3;
+    const desiredPages = 2;
 
     const totalLeadersNeeded = leadersPerPage * desiredPages;
     const repeatTimes = Math.ceil(totalLeadersNeeded / leaders.length);
@@ -123,13 +144,13 @@ const About = () => {
         </p>
         <div className="text-white pt-5 lg:block">
           <div className="flex-row md:flex md:mx-auto lg:flex justify-center w-full">
-            <div className="bg-[#4191AD] w-full lg:w-md h-80 flex flex-col justify-center items-center px-5 brightness-120 opacity-60">
+            <div className="bg-[#4191AD] w-full lg:w-md h-80 flex flex-col justify-center items-center px-5 brightness-120 opacity-60 shadow-md">
               <h1 className="text-3xl font-bold py-2">Shoppability</h1>
               <p>
                 Brilliant execution in all <br /> retail channels
               </p>
             </div>
-            <div className="bg-[#7F9E3D]  h-80  w-full lg:w-md flex flex-col justify-center items-center px-5 brightness-120 opacity-60">
+            <div className="bg-[#7F9E3D]  h-80  w-full lg:w-md flex flex-col justify-center items-center px-5 brightness-120 opacity-60 shadow-md">
               <h1 className="text-3xl font-bold py-2">Consumability</h1>
               <p>
                 Develop products <br /> consumers want and <br /> desire
@@ -137,14 +158,14 @@ const About = () => {
             </div>
           </div>
           <div className="flex-row md:flex md:mx-auto lg:flex justify-center w-full">
-            <div className="bg-[#E8873C] h-80 w-full lg:w-md flex flex-col justify-center items-center px-5 brightness-120 opacity-60">
+            <div className="bg-[#E8873C] h-80 w-full lg:w-md flex flex-col justify-center items-center px-5 brightness-120 opacity-60 shadow-md">
               <h1 className="text-3xl font-bold py-2">Attractiveness</h1>
               <p>
                 Deliver value for us, our <br /> consumers and our <br /> retail
                 partner
               </p>
             </div>
-            <div className="bg-[#7D4896] h-80  w-full lg:w-md flex flex-col justify-center items-center px-5 brightness-120 opacity-60">
+            <div className="bg-[#7D4896] h-80  w-full lg:w-md flex flex-col justify-center items-center px-5 brightness-120 opacity-60 shadow-md">
               <h1 className="text-3xl font-bold py-2">Memorability</h1>
               <p>
                 Build distinctive brands <br /> and strengthen <br /> consumer
@@ -216,7 +237,7 @@ const About = () => {
             className={`p-2 rounded-full ${
               currentPage === 1
                 ? "text-gray-400"
-                : "text-[#B50606] hover:text-[#800404]"
+                : "text-black-900 hover:text-[#800404]"
             }`}
           >
             <IoIosArrowDropleft size={50} />
@@ -227,7 +248,7 @@ const About = () => {
             className={`p-2 rounded-full ${
               currentPage === totalPages
                 ? "text-gray-400"
-                : "text-[#B50606] hover:text-[#800404]"
+                : "text-black-900 hover:text-[#800404]"
             }`}
           >
             <IoIosArrowDropright size={50} />

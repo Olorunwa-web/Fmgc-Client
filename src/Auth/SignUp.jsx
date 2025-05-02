@@ -7,6 +7,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
 // import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import { PiBackspaceFill } from "react-icons/pi";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -50,11 +51,14 @@ const SignUp = () => {
     setSubmitError("");
 
     try {
-      const res = await fetch("http://localhost:4000/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://it-project-server.onrender.com/api/auth/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await res.json();
 
@@ -76,9 +80,12 @@ const SignUp = () => {
        try {
          console.log("Google Token Response:", tokenResponse);
 
-         const res = await axios.post("http://localhost:4000/api/auth/google", {
-           token: tokenResponse.access_token,
-         });
+         const res = await axios.post(
+           "https://it-project-server.onrender.com/api/auth/google",
+           {
+             token: tokenResponse.access_token,
+           }
+         );
          console.log("Signup Success", res.data);
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -93,10 +100,18 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex lg:flex-row justify-between">
       <div className="py-1 px-8 w-full lg:w-xl lg:pt-5 lg:px-12">
-        <header>
+        <header className="flex justify-between">
           <Link to="/">
             <img className="h-20 w-21" src={logo} alt="Logo" />
           </Link>
+
+           <button
+                        onClick={() => navigate(-1)}
+                        className="flex items-center mt-2 pr-1 lg:hidden"
+                      >
+                        <PiBackspaceFill className="text-black-700" size={35} />
+                        {/* <p className="text-lg text-red-600">Back</p> */}
+                      </button>
         </header>
 
         <form className="relative pt-[2%]" onSubmit={handleSubmit}>

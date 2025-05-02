@@ -31,7 +31,7 @@ export default function SetPassword() {
       }
 
       const res = await axios.post(
-        `http://localhost:4000/api/auth/reset-password/${token}`,
+        `https://it-project-server.onrender.com/api/auth/reset-password/${token}`,
         {
           newPassword,
         },
@@ -55,9 +55,12 @@ export default function SetPassword() {
       try {
         console.log("Google Token Response:", tokenResponse);
 
-        const res = await axios.post("http://localhost:4000/api/auth/google", {
-          token: tokenResponse.access_token,
-        });
+        const res = await axios.post(
+          "https://it-project-server.onrender.com/api/auth/google",
+          {
+            token: tokenResponse.access_token,
+          }
+        );
         console.log("Signup Success", res.data);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.user));
