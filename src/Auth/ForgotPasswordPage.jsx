@@ -7,6 +7,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
 // import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import { PiBackspaceFill } from "react-icons/pi";
 
 export default function ForgotPasswordPage() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function ForgotPasswordPage() {
 
     try {
       const response = await fetch(
-        "http://localhost:4000/api/auth/forgot-password",
+        "https://it-project-server.onrender.com/api/auth/forgot-password",
         {
           method: "POST",
           headers: {
@@ -52,7 +53,7 @@ export default function ForgotPasswordPage() {
 
     try {
       const response = await fetch(
-        "http://localhost:4000/api/auth/forgot-password",
+        "https://it-project-server.onrender.com/api/auth/forgot-password",
         {
           method: "POST",
           headers: {
@@ -83,9 +84,12 @@ export default function ForgotPasswordPage() {
       try {
         console.log("Google Token Response:", tokenResponse);
 
-        const res = await axios.post("http://localhost:4000/api/auth/google", {
-          token: tokenResponse.access_token,
-        });
+        const res = await axios.post(
+          "https://it-project-server.onrender.com/api/auth/google",
+          {
+            token: tokenResponse.access_token,
+          }
+        );
         console.log("Signup Success", res.data);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -99,10 +103,17 @@ export default function ForgotPasswordPage() {
   return (
     <div className="min-h-screen flex justify-between lg:flex-row">
       <div className="py-2 px-8 w-full lg:w-xl lg:py-10 lg:px-12">
-        <header>
+        <header className="flex justify-between">
           <Link to="/">
             <img className="h-20 w-21" src={logo} alt="Logo" />
           </Link>
+           <button
+                                  onClick={() => navigate(-1)}
+                                  className="flex items-center mt-2 pr-1 lg:hidden"
+                                >
+                                  <PiBackspaceFill className="text-black-700" size={35} />
+                                  {/* <p className="text-lg text-red-600">Back</p> */}
+                                </button>
         </header>
         <main className="mx-auto w-full pt-[13%]">
           <h1 className="text-3xl font-bold">Reset Your Password</h1>
