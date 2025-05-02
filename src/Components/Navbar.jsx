@@ -122,10 +122,10 @@ const Navbar = () => {
                           </div>
                         ) : (
                           <>
-                            <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C] hover:text-[#FFFFFF]">
+                            <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px] w-[100%]  border-[#D41C1C] hover:bg-[#D41C1C] hover:text-[#FFFFFF]">
                               Log In
                             </button>
-                            <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF]">
+                            <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px] w-[100%] border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF]">
                               Sign up
                             </button>
                           </>
