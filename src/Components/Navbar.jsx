@@ -15,14 +15,12 @@ const Navbar = () => {
 
     return (
       <>
-
-
         <section className="sticky top-0 left-0 w-[100%] bg-[#FFFFFF] z-999">
           <main className="container mx-auto px-4 py-3 lg:px-12">
             <section className="flex justify-between items-center">
-              <div className="w-[64px] md:w-[73px] lg:w-[73px]">
+              <NavLink to = '/' className="w-[64px] md:w-[73px] lg:w-[73px]">
                 <img src={pz} alt="" className="w-[100%]" />
-              </div>
+              </NavLink>
               <div className=" hidden md:flex gap-6">
                 <NavLink
                   to="/"
