@@ -2,17 +2,16 @@ import React, {useState} from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import homeBackground from '../assets/abstract-geometric-white-and-gray-on-light-silver-gradient-background-modern-banner-design-illustration-free-vector 1.jpg'
 import arrowright from '../assets/arrow-right.svg';
-import pzimage from '../assets/image 15.jpg';
 import midimage from '../assets/w=1024 1.jpg';
-import pzcussion from '../assets/Frame 140.jpg';
 import annualimg from '../assets/annual-report-2024-1 1.png';
-import climbimg from '../assets/iStock-649871644_LRG-scaled 1.jpg';
-import calimg from '../assets/45275_PZ_factsheet_web_banner_v02 1.jpg';
+import climbimg from '../assets/iStock-649871644_LRG-scaled 1.png';
+import calimg from '../assets/45275_PZ_factsheet_web_banner_v02 1.png';
 import dot from '../assets/dot-svgrepo-com.svg';
-import gifvid from '../assets/4153588-uhd_4096_2160_25fps.mp4-ezgif.com-video-to-gif-converter.gif';
 import { allbrands } from '../data';
 import { news } from '../data';
-import Swipes from '../Components/Swipes'
+import Swipes from '../Components/Swipes';
+import Swipes2 from '../Components/Swipes2';
+import Swipes3 from '../Components/Swipes3';
 import Prefooter from '../Components/Prefooter';
 
 
@@ -30,7 +29,7 @@ const Home = () => {
 
     return (
         <>
-           <section className = "bg-[url('')] bg-cover py-12 flex justify-center items-center" style = {{ backgroundImage: `url(${homeBackground})` }}>
+           <section className = "bg-[url('')] bg-cover py-12 md:py-13 lg:py-14 flex justify-center items-center" style = {{ backgroundImage: `url(${homeBackground})` }}>
                <section className = 'container mx-auto px-4 lg:px-12 '>
                    <div className = 'flex flex-col gap-5'>
                        <div>
@@ -45,16 +44,14 @@ const Home = () => {
                            </div>
                        </div>
                        <div className = 'flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0'>
-                           <div className = '  w-[80%] md:w-[24%] lg:w-[23%]  md:h-[170px]  rounded-[11px]'>
-                               {/* <img src= {pzimage} alt="" className = 'w-[33%] md:w-[110px] '/> */}
+                           <div className = '  w-[80%] md:w-[24%] lg:w-[26%] md:h-[100%]  lg:h-[90%] '>
                                <Swipes/>
                            </div>
-                           <div className = 'lg:w-[55%] md:w-[50%] flex flex-col md:flex-row items-center justify-center'>
-                               <img src= {midimage} alt="" className = ' md:w-[100%] lg:w-[83%] rounded-[11px]'/>
+                           <div className = 'w-[100%] lg:w-[41%] md:w-[47%] md:h-[100%] lg:h-[100%] '>
+                               <Swipes3/>
                            </div>
-                           <div className = 'lg:w-[22%] w-[80%] md:w-[24%] md:h-[170px] bg-[#C60C30] rounded-[11px] flex justify-center items-center h-[200px]'>
-                               {/* <img src= {pzcussion} alt="" className = 'w-[100%] h-[100%]'/> */}
-                               <h1 className = 'text-[#FFFFFF] font-barlow text-[27px] lg:text-[28px] md:text-[20px] font-[300]' >We are <span className = 'text-[#FFFFFF] font-barlow   lg:text-[28px] md:text-[20px] font-[500]'>PZ Cussions</span> </h1>
+                           <div className = ' w-[80%] md:w-[24%] lg:w-[26%] md:h-[100%]  lg:h-[90%]'>
+                               <Swipes2/>
                            </div>
                        </div>
                    </div>

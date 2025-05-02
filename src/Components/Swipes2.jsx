@@ -1,16 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Autoplay } from 'swiper/modules';
-import image1 from '../assets/Frame 141.png';
-import image2 from '../assets/Frame 144.png';
-import image3 from '../assets/Frame 144 (1).png';
-import image4 from '../assets/Frame 1171276145.png';
-import pzimage from '../assets/Frame 137.png';
+import images1 from '../assets/Frame 140.png'
+import images2 from '../assets/Frame 143.png'
+import images3 from '../assets/Frame 146.png'
+import images4 from '../assets/Frame 146 (1).png'
+import images5 from '../assets/Frame 1171276147.png'
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
-
-const Swipes = () => {
+const Swipes2 = () => {
     return (
         <>
             <div>
@@ -24,24 +23,24 @@ const Swipes = () => {
                loop={true}
                className="w-[95%]  md:w-[100%] lg:w-[95%] md:h-[100%] lg:h-[100%]  ">
                <SwiperSlide className = '  w-[100%] h-[100%] ' >
-                      <img src= {pzimage} alt="" className = 'w-[100%] h-[100%]'/>
+                      <img src= {images1} alt="" className = 'w-[100%] h-[100%]'/>
                </SwiperSlide>
                <SwiperSlide className = ' w-[100%] h-[100%]'>
-                    <img src= {image1} alt="" className = 'w-[100%] h-[100%]  '/>
+                    <img src= {images2} alt="" className = 'w-[100%] h-[100%]  '/>
                </SwiperSlide>
                <SwiperSlide >
-                    <img src= {image2} alt="" className = 'w-[100%] h-[100%] '/>
+                    <img src= {images3} alt="" className = 'w-[100%] h-[100%] '/>
                </SwiperSlide>
                <SwiperSlide >
-                    <img src= {image3} alt="" className = 'w-[100%] h-[100%] '/>
+                    <img src= {images4} alt="" className = 'w-[100%] h-[100%] '/>
                </SwiperSlide>
                <SwiperSlide >
-                    <img src= {image4} alt="" className = 'w-[100%] h-[100%] '/>
+                    <img src= {images5} alt="" className = 'w-[100%] h-[100%] '/>
                </SwiperSlide>
             </Swiper>
-            </div>
+            </div> 
         </>
     )
 }
 
-export default Swipes
+export default Swipes2
