@@ -1,11 +1,12 @@
 import React , { useState } from 'react'
 import Prefooter from '../Components/Prefooter';
 import { ourbrand } from '../data';
-import { NavLink, Outlet, useMatch } from 'react-router-dom';
+import { NavLink, Outlet, useMatch, useLocation, useNavigate } from 'react-router-dom';
 import Allbrands from '../Pages/Allbrands';
 import searchs from '../assets/iconamoon_search-thin.svg';
 import cancel from '../assets/close_32dp_000000_FILL0_wght400_GRAD0_opsz40.svg';
-import Search from '../Components/Search'
+import Search from '../Components/Search';
+import drops from '../assets/stat_minus_1_24dp_808080_FILL0_wght400_GRAD0_opsz24.svg'
 
 
 
@@ -16,6 +17,13 @@ const OurBrand = () => {
 
 
    const [searchTerm, setSearchTerm] = useState('');
+
+   const navigate = useNavigate();
+   const location = useLocation();
+ 
+   const handleChange = (e) => {
+     navigate(e.target.value);
+   };
 
 
 
@@ -32,7 +40,8 @@ const OurBrand = () => {
             {/*  */}
             <section className = 'container mx-auto px-4 lg:px-12'>
               <section className = 'flex justify-between items-center'>
-                  <section className = 'overflow-x-scroll md:overflow-hidden flex gap-6 md:py-10 py-9 md:w-[100%] w-[48%] '>
+                  <section className = ''>
+                   <section className = 'hidden md:flex gap-6 md:py-10 py-9 md:w-[100%] w-[48%] '>
                     {ourbrand.map((outbrand)=>{
                         const {id, head, path } = outbrand
                         return (
@@ -52,54 +61,37 @@ const OurBrand = () => {
                             </div>
                         )
                     })}
-                     {/* <NavLink
-                         to="/ourbrand/allbrands"
-                         end
-                         className={({ isActive:  active }) =>
-                        (active
-                           ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] ")}>
-                           All Brands
-                      </NavLink>
-                       <NavLink
-                         to="/home/hygiene"
-                         end
-                         className={({ isActive: active }) =>
-                         (active
-                           ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] ")}>
-                           Hygiene
-                      </NavLink>
-                       <NavLink
-                         to="/home/beauty"
-                         end
-                         className={({ isActive: active }) =>
-                         (active
-                           ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] ")}>
-                           Beauty
-                      </NavLink>
-                       <NavLink
-                         to="/home/baby"
-                         end
-                         className={({ isActive: active }) =>
-                         active
-                           ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "}>
-                           Baby
-                      </NavLink> */}
+                    
                    </section>
+                   <section className = 'block md:hidden py-7'>
+                       <section onChange = {handleChange} className = 'flex items-center gap-1'>
+                           <select value = {location.pathname} className = 'font-medium text-[16px] text-[#E31837] leading-[28px] border-b-2 bprder-[#D41C1C] pb-1 outline-none focus:outline-none focus:ring-0 reltive'>
+                               {ourbrand.map((mobile) => {
+                                  const {id, head, path } = mobile
+                                  return (
+                                      <option key = {id} value={path} className = 'font-medium text-[16px] text-[#B3B3B3] leading-[28px] text-center'>
+                                          {head}
+                                      </option>
+                                  )
+                               })}
+                           </select>
+                           <section>
+                               <img src={drops} alt=""/>
+                           </section>
+                       </section>
+                   </section>
+                  </section>
                   <section  className = 'w-[48%] relative flex justify-end'>
                     <Search onSearch = {setSearchTerm}/>
                   </section>
                 </section>
-                {match ? (
+                  <Outlet/>
+                {/* {match ? (
                     <section>
                        <Allbrands searchTerm = {searchTerm}/>
                     </section>
                  ) : (
-                     <Outlet/>
-                )}
+                     )} */}
 
 
                 
@@ -108,5 +100,4 @@ const OurBrand = () => {
         </section>
     )
 }
-
 export default OurBrand

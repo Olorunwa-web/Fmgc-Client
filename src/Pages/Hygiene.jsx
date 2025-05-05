@@ -11,7 +11,7 @@ const Hygiene = () => {
 
     return (
         <>
-           <section>
+           <section className = ''>
            <section className = 'md:flex md:flex-wrap justify-between items-center'>
                        {hygiene.map((product)=> {
                            const {id, Image, title, use1, use2, use3, use4 } = product

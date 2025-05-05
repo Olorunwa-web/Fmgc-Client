@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import SignUp from './Auth/SignUp';
 import SignIn from './Auth/SignIn';
 import Navbar from './Components/Navbar';
@@ -48,6 +48,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/ourbrand" element={<OurBrand />}>
+               <Route index element={<Navigate to="/ourbrand/allbrands" replace />} />
                <Route path="/ourbrand/allbrands" element={<Allbrands />}/>
                <Route path="/ourbrand/hygiene" element={<Hygiene />} />
                <Route path="/ourbrand/beauty" element={<Beauty />} />
