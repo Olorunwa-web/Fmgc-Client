@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState , useEffect, useRef} from 'react';
 import pz from '../assets/pz 3 1.svg';
 import { Link, Outlet, NavLink } from 'react-router-dom';
 import harmburg from '../assets/menu_34dp_000000_FILL0_wght400_GRAD0_opsz40.svg';
@@ -12,7 +12,26 @@ import { navs } from '../data'
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
     const [isOpen, setIsOpen] = useState(false);
+    const sidebarRef = useRef();
 
+
+    useEffect(() => {
+      function handleClickOutside(event) {
+        if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+          setIsOpen(false);
+        }
+      }
+  
+      if (isOpen) {
+        document.addEventListener('mousedown', handleClickOutside);
+      } else {
+        document.removeEventListener('mousedown', handleClickOutside);
+      }
+  
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [isOpen]);
     return (
       <>
         <section className="sticky top-0 left-0 w-[100%] bg-[#FFFFFF] z-999">
@@ -99,7 +118,11 @@ const Navbar = () => {
                 <div onClick={() => setIsOpen(true)}>
                   <img src={harmburg} alt="" className="w-[32px]" />
                 </div>
+                {isOpen && (
+                  <div className="fixed inset-0 z-40 transition-opacity duration-200"></div>
+                )}
                 <div
+                 ref = {sidebarRef}
                   className={`fixed top-0 right-0 h-full w-[70%] bg-white z-50 transform transition-transform duration-200
                         ${isOpen ? "translate-x-0" : "translate-x-full"}`}
                 >
