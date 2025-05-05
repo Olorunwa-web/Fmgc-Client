@@ -122,7 +122,7 @@ const Contact = () => {
             </h1>
             <p className="text-lg">PZ will like to connect with you</p>
           </div>
-          <div className="mt-10 lg:-mt-15 lg:ml-10">
+          <div className="mt-8 lg:-mt-15 lg:ml-10">
             <img
               src={image}
               alt="Contact Icons"

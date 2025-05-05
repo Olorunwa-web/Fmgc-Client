@@ -190,42 +190,86 @@ const About = () => {
               currentPage * leadersPerPage
             )
             .map((leader) => (
-              <div
-                key={leader.id}
-                className="group relative rounded-lg overflow-hidden shadow-md bg-white opacity-0 animate-fadeIn"
-              >
-                <img
-                  src={leader.image}
-                  alt={leader.name}
-                  className="w-full h-[458px] object-cover"
-                />
+              <div>
 
-                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gray-200 opacity-0 group-hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center p-4 text-dark">
-                  <h2 className="text-3xl font-bold">{leader.name}</h2>
-                  <p className="py-3 text-lg">{leader.position}</p>
+                <div
+                  key={leader.id}
+                  className="hidden lg:flex group relative rounded-lg overflow-hidden shadow-md bg-white opacity-0 animate-fadeIn"
+                >
+                  <img
+                    src={leader.image}
+                    alt={leader.name}
+                    className="w-full h-[458px] object-cover"
+                  />
 
-                  <div className="flex gap-3">
-                    <span className="border-1 flex items-center rounded-md px-0.5">
-                      <RiFacebookLine size={18} />
-                    </span>
+                  <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gray-200 opacity-0 group-hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center p-4 text-dark">
+                    <h2 className="text-3xl font-bold">{leader.name}</h2>
+                    <p className="py-3 text-lg">{leader.position}</p>
 
-                    <span className="border-1 flex items-center rounded-md px-0.5">
-                      <RiTwitterXLine size={15} />
-                    </span>
+                    <div className="flex gap-3">
+                      <span className="border-1 flex items-center rounded-md px-0.5">
+                        <RiFacebookLine size={18} />
+                      </span>
 
-                    <span>
-                      <FaThreads size={25} />
-                    </span>
+                      <span className="border-1 flex items-center rounded-md px-0.5">
+                        <RiTwitterXLine size={15} />
+                      </span>
 
-                    <span className="text-black-900">
-                      <RiInstagramFill size={25} />
-                    </span>
+                      <span>
+                        <FaThreads size={25} />
+                      </span>
 
-                    <span>
-                      <FaLinkedinIn size={25} />
-                    </span>
+                      <span className="text-black-900">
+                        <RiInstagramFill size={25} />
+                      </span>
+
+                      <span>
+                        <FaLinkedinIn size={25} />
+                      </span>
+                    </div>
                   </div>
                 </div>
+
+                <div
+                  key={leader.id}
+                  className="flex lg:hidden relative rounded-lg overflow shadow-md bg-white opacity-0 animate-fadeIn"
+                >
+                  <img
+                    src={leader.image}
+                    alt={leader.name}
+                    className="w-full h-[458px] object-cover"
+                  />
+
+                  <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gray-100 opacity-80 transition-all duration-500 flex flex-col items-center justify-center p-4 text-dark">
+                    <h2 className="text-3xl font-bold">{leader.name}</h2>
+                    <p className="py-3 text-lg">{leader.position}</p>
+
+                    <div className="flex gap-3">
+                      <span className="border-1 flex items-center rounded-md px-0.5">
+                        <RiFacebookLine size={18} />
+                      </span>
+
+                      <span className="border-1 flex items-center rounded-md px-0.5">
+                        <RiTwitterXLine size={15} />
+                      </span>
+
+                      <span>
+                        <FaThreads size={25} />
+                      </span>
+
+                      <span className="text-black-900">
+                        <RiInstagramFill size={25} />
+                      </span>
+
+                      <span>
+                        <FaLinkedinIn size={25} />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+
+
               </div>
             ))}
         </div>
@@ -255,7 +299,7 @@ const About = () => {
           </button>
         </div>
       </section>
-      <Prefooter/>
+      <Prefooter />
     </div>
   );
 };

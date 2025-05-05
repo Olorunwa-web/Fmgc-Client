@@ -13,19 +13,31 @@ import axios from "axios";
 
 const Footer = () => {
     const [email, setEmail] = useState("");
+     const [error, setError] = useState("");
+     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
       e.preventDefault();
+      setError("");
+      setLoading(true);
       try {
-        await axios.post(
+        const res = await axios.post(
           "https://it-project-server.onrender.com/api/subscribe",
           { email }
         );
-        alert("Subscribed successfully!");
-        setEmail("");
+
+        if (res.status === 200) {
+          // alert("Subscribed successfully!");
+          setEmail("");
+        } else {
+          throw new Error("Unexpected response status");
+        }
       } catch (err) {
-        console.error(err);
+        console.error("Subscription error:", err);
+        setError("Subscription failed. Please try again.");
         alert("Subscription failed.");
+      } finally {
+        setLoading(false);
       }
     };
     return (
@@ -52,11 +64,15 @@ const Footer = () => {
                     <div className="absolute top-[11px] right-[4%] lg:top-[15px] md:right-[4%] lg:right-[3%]">
                       <button
                         type="submit"
-                        className="bg-[#D41C1C] w-[110px] rounded-[6px] text-[15px] text-white font-medium leading-[28px] h-[40px]"
+                        disabled={loading}
+                        className={`bg-[#D41C1C] w-[110px] rounded-[6px] text-[15px] text-white font-medium leading-[28px] h-[40px] ${
+                          loading ? "opacity-50 cursor-not-allowed" : ""
+                        }`}
                       >
-                        Submit
+                        {loading ? "Submitting..." : "Submit"}
                       </button>
                     </div>
+                    {error && <p className="text-red-500 text-sm">{error}</p>}
                   </form>
                   <p className="pt-3 text-[16px] text-white font-normal leading-[28px]">
                     We treat your info responsibly unsubscribe anytime.
@@ -173,12 +189,17 @@ const Footer = () => {
                     PZ Cussons 2025. All right reserved.
                   </span>
                 </div>
-                <div className="flex items-center gap-3">
+                <button
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
+                  className="flex items-center gap-3 cursor-pointer"
+                >
                   <span className="text-[#FFFFFF] text-[15px] font-medium leading-[28px]">
                     Back to top
                   </span>
-                  <img src={arrowup} alt="" />
-                </div>
+                  <img src={arrowup} alt="Back to top" />
+                </button>
               </div>
             </section>
           </section>
