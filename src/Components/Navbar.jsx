@@ -6,6 +6,8 @@ import harmburgclose from '../assets/close_32dp_000000_FILL0_wght400_GRAD0_opsz4
 import { AuthContext } from "../Auth/context/AuthContext";
 import { useContext } from 'react';
 import Footer from '../Components/Footer';
+import { navs } from '../data'
+
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
@@ -13,8 +15,10 @@ const Navbar = () => {
 
     return (
       <>
-        <section className="sticky top-0 left-0 w-[100%] bg-[#FFFFFF] z-[999]">
-          <main className="container mx-auto px-4 py-3">
+
+
+        <section className="sticky top-0 left-0 w-[100%] bg-[#FFFFFF] z-999">
+          <main className="container mx-auto px-4 py-3 lg:px-12">
             <section className="flex justify-between items-center">
               <div className="w-[64px] md:w-[73px] lg:w-[73px]">
                 <img src={pz} alt="" className="w-[100%]" />
@@ -25,7 +29,7 @@ const Navbar = () => {
                   end
                   className={({ isActive }) =>
                     isActive
-                      ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
+                      ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2 pb-1"
                       : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "
                   }
                 >
@@ -35,7 +39,7 @@ const Navbar = () => {
                   to="/about"
                   className={({ isActive }) =>
                     isActive
-                      ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
+                      ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2 pb-1"
                       : " font-medium text-[16px] text-[#B3B3B3] leading-[28px]"
                   }
                 >
@@ -45,7 +49,7 @@ const Navbar = () => {
                   to="/ourbrand"
                   className={({ isActive }) =>
                     isActive
-                      ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
+                      ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2 pb-1"
                       : " font-medium text-[16px] text-[#B3B3B3] leading-[28px]"
                   }
                 >
@@ -55,7 +59,7 @@ const Navbar = () => {
                   to="/contact"
                   className={({ isActive }) =>
                     isActive
-                      ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
+                      ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2 pb-1"
                       : " font-medium text-[16px] text-[#B3B3B3] leading-[28px]"
                   }
                 >
@@ -110,50 +114,23 @@ const Navbar = () => {
                         <img src={harmburgclose} alt="" className="w-[30px]" />
                       </div>
                       <div className="flex flex-col gap-5 ps-2">
-                        <NavLink
-                          to="/"
-                          end
-                          className={({ isActive }) =>
-                            isActive
-                              ? " font-medium text-[16px] text-[#E31B37] leading-[28px]  w-[47px] border-b-2"
-                              : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "
-                          }
-                        >
-                          Home
-                        </NavLink>
-                        <NavLink
-                          to="/about"
-                          end
-                          className={({ isActive }) =>
-                            isActive
-                              ? " font-medium text-[16px] text-[#E31B37] leading-[28px] w-[78px] border-b-2"
-                              : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "
-                          }
-                        >
-                          About Us
-                        </NavLink>
-                        <NavLink
-                          to="/ourbrand"
-                          end
-                          className={({ isActive }) =>
-                            isActive
-                              ? " font-medium text-[16px] text-[#E31B37] leading-[28px] w-[98px] border-b-2"
-                              : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "
-                          }
-                        >
-                          Our Brands
-                        </NavLink>
-                        <NavLink
-                          to="/contact"
-                          end
-                          className={({ isActive }) =>
-                            isActive
-                              ? " font-medium text-[16px] text-[#E31B37] leading-[28px] w-[97px] border-b-2"
-                              : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "
-                          }
-                        >
-                          Contact Us
-                        </NavLink>
+                        {navs.map((bar)=>{
+                          const {id, head, path} = bar
+                          return (
+                            <NavLink
+                               to= {path}
+                               key = {id}
+                               end
+                               className={({ isActive }) =>
+                               `font-medium text-[16px] text-[#B3B3B3] leading-[28px] mx-auto ${isActive
+                                 ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2 w-[120px] text-center "
+                                 : " font-medium text-[16px] text-[#B3B3B3] leading-[28px]  "
+                               }`}
+                             >
+                               <span>{head}</span>
+                            </NavLink>
+                          )
+                        })}
                       </div>
                       <div className=" ps-4 flex flex-col gap-2 ">
                         {user ? (

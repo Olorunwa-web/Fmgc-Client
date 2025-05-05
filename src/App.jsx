@@ -12,11 +12,12 @@ import Allbrands from './Pages/Allbrands';
 import Hygiene from './Pages/Hygiene';
 import Beauty from './Pages/Beauty';
 import Baby from './Pages/Baby';
+import Otherbrand from './Pages/Otherbrand';
 import './App.css'
 // import SetNewPassword from './Auth/setNewPassword';
 import ForgotPasswordPage from "./Auth/ForgotPasswordPage";
 import SetPassword from './Auth/SetPassword';
-
+import Footer from './Components/Footer'
 function App() {
 
   return (
@@ -38,15 +39,16 @@ function App() {
             element={<SetPassword />}
           />
           <Route element={<Navbar />}>
-            <Route path="/" element={<Home />}>
-              <Route path="/home/allbrands" element={<Allbrands />} />
-              <Route path="/home/hygiene" element={<Hygiene />} />
-              <Route path="/home/beauty" element={<Beauty />} />
-              <Route path="/home/baby" element={<Baby />} />
-            </Route>
+            <Route path="/" element={<Home />}/>
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-            <Route path="/ourbrand" element={<OurBrand />} />
+            <Route path="/ourbrand" element={<OurBrand />}>
+              <Route path="/ourbrand/allbrands" element={<Allbrands />} />
+              <Route path="/ourbrand/hygiene" element={<Hygiene />} />
+              <Route path="/ourbrand/beauty" element={<Beauty />} />
+              <Route path="/ourbrand/baby" element={<Baby />} />
+              <Route path="/ourbrand/otherbrand" element={<Otherbrand/>} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
