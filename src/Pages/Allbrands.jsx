@@ -82,7 +82,7 @@ const Allbrands = ({ searchTerm }) => {
                    {/*  */}
 
                    <section className = 'my-3'>
-                      <div className="flex justify-center   space-x-2">
+                      <div className="flex justify-center pb-4 space-x-2">
                           {[...Array(totalPages)].map((_, index) => {
                              const page = index + 1;
                              const isActive = page === currentPage;

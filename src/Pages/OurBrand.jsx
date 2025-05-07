@@ -42,8 +42,7 @@ const OurBrand = () => {
             </section>
             {/*  */}
             <section className = 'container mx-auto px-4 lg:px-12'>
-                <section>
-
+            <section className = 'py-7'>
               <section className = 'flex justify-between items-center'>
                   <section className = ''>
                    <section className = 'hidden md:flex gap-6 md:py-10 py-9 md:w-[100%] w-[48%] '>
