@@ -44,11 +44,10 @@ function App() {
             element={<SetPassword />}
           />
           <Route element={<Navbar />}>
-            <Route path="/" element={<Home />}/>
+            <Route path="/"  element={<Home />}/>
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-            <Route path="/ourbrand" element={<OurBrand />}>
-               <Route index element={<Navigate to="/ourbrand/allbrands" replace />} />
+            <Route  path="/ourbrand" element={<OurBrand />}>
                <Route path="/ourbrand/allbrands" element={<Allbrands />}/>
                <Route path="/ourbrand/hygiene" element={<Hygiene />} />
                <Route path="/ourbrand/beauty" element={<Beauty />} />
