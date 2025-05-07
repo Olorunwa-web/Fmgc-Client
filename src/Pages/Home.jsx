@@ -32,6 +32,8 @@ const Home = () => {
     useEffect(() => {
         productContainerRef.current?.scrollIntoView({ behavior: 'smooth' });
       }, [currentPage]);
+    
+
 
     return (
         <>
@@ -44,10 +46,12 @@ const Home = () => {
                        </div>
                        <div className = 'mx-auto flex flex-col md:flex-row items-center gap-4'>
                            <Link to = '/about'><button className = 'bg-[#C60C30] text-[#FFFFFF] text-[16px] md:text-[17px] font-[400] rounded-[6px] px-[10px] py-[8px]'>Discover more about us</button></Link>
-                           <div className = 'flex gap-2'>
-                             <button className = 'md:text-[17px] text-[#424242] text-[16px] font-[500] ' >watch the film</button>
-                             <img src= {arrowright} alt="" className = 'w-[22px]'/>
-                           </div>
+                           <a href="https://youtu.be/KkD9dloICRs?si=iQ_CalvB25-eEnkB" target="_blank" rel="noopener noreferrer">
+                             <div className = 'flex gap-2'>
+                                 <button className = 'md:text-[17px] text-[#424242] text-[16px] font-[500] ' >watch the film</button>
+                                 <img src= {arrowright} alt="" className = 'w-[22px]'/>
+                             </div>
+                           </a>
                        </div>
                        <div className = 'flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0'>
                            <div className = ' w-[80%] md:w-[24%] lg:w-[26%] md:h-[100%]  lg:h-[90%] '>
