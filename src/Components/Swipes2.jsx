@@ -12,7 +12,7 @@ import 'swiper/css/effect-fade';
 const Swipes2 = () => {
     return (
         <>
-            <div>
+            <div className = 'hidden md:block'>
             <Swiper
                modules={[EffectFade, Autoplay]}
                effect="fade"

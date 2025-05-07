@@ -3,17 +3,20 @@ import Prefooter from '../Components/Prefooter';
 import { ourbrand } from '../data';
 import { NavLink, Outlet, useMatch, useLocation, useNavigate } from 'react-router-dom';
 import Allbrands from '../Pages/Allbrands';
-import searchs from '../assets/iconamoon_search-thin.svg';
-import cancel from '../assets/close_32dp_000000_FILL0_wght400_GRAD0_opsz40.svg';
 import Search from '../Components/Search';
 import drops from '../assets/stat_minus_1_24dp_808080_FILL0_wght400_GRAD0_opsz24.svg'
-
-
-
+import Hygiene from '../Pages/Hygiene';
+import Beauty from '../Pages/Beauty';
+import Baby from '../Pages/Baby';
+import Otherbrands from '../Pages/Otherbrand';
 
 const OurBrand = () => {
 
-   const match  = useMatch("/ourbrands/allbrands")
+   const match  = useMatch("/ourbrand")
+   const hygiene  = useMatch("/ourbrand/hygiene")
+   const beauty  = useMatch("/ourbrand/beauty")
+   const baby  = useMatch("/ourbrand/baby")
+   const otherbrand  = useMatch("/ourbrand/otherbrand")
 
 
    const [searchTerm, setSearchTerm] = useState('');
@@ -39,6 +42,8 @@ const OurBrand = () => {
             </section>
             {/*  */}
             <section className = 'container mx-auto px-4 lg:px-12'>
+                <section>
+
               <section className = 'flex justify-between items-center'>
                   <section className = ''>
                    <section className = 'hidden md:flex gap-6 md:py-10 py-9 md:w-[100%] w-[48%] '>
@@ -64,8 +69,8 @@ const OurBrand = () => {
                     
                    </section>
                    <section className = 'block md:hidden py-7'>
-                       <section onChange = {handleChange} className = 'flex items-center gap-1'>
-                           <select value = {location.pathname} className = 'font-medium text-[16px] text-[#E31837] leading-[28px] border-b-2 bprder-[#D41C1C] pb-1 outline-none focus:outline-none focus:ring-0 reltive'>
+                       <section  className = 'flex items-center gap-1'>
+                           <select onChange = {handleChange} value = {location.pathname} className = 'font-medium text-[16px] text-[#E31837] leading-[28px] border-b-2 bprder-[#D41C1C] pb-1 outline-none focus:outline-none focus:ring-0 reltive'>
                                {ourbrand.map((mobile) => {
                                   const {id, head, path } = mobile
                                   return (
@@ -85,16 +90,24 @@ const OurBrand = () => {
                     <Search onSearch = {setSearchTerm}/>
                   </section>
                 </section>
-                  <Outlet/>
-                {/* {match ? (
-                    <section>
-                       <Allbrands searchTerm = {searchTerm}/>
-                    </section>
-                 ) : (
-                     )} */}
 
+                {/*  */}
+                {match ? (
+                <section>
+                    <Allbrands searchTerm = {searchTerm}/>
+                </section>
+                  ) : (
+                //  <Outlet/>
+                <div>
+                  { hygiene && <Hygiene searchTerm = {searchTerm}/>}
+                  { beauty && <Beauty searchTerm = {searchTerm} />}
+                  { baby && <Baby searchTerm = {searchTerm} />}
+                  { otherbrand && <Otherbrands searchTerm = {searchTerm} />}
+                </div>
 
-                
+                )}
+                </section>
+    
             </section>
             <Prefooter/>
         </section>

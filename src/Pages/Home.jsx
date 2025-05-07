@@ -1,5 +1,5 @@
 import React, {useState , useEffect, useRef } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet,Link } from 'react-router-dom'
 import homeBackground from '../assets/abstract-geometric-white-and-gray-on-light-silver-gradient-background-modern-banner-design-illustration-free-vector 1.jpg'
 import arrowright from '../assets/arrow-right.svg';
 import midimage from '../assets/w=1024 1.jpg';
@@ -43,14 +43,14 @@ const Home = () => {
                           <h1 className = ' font-[700] text-center font-barlow text-[40px] md:text-[60px] lg:text-[80px] text-[#C60C30] leading-[50px] md:leading-[65.8px]'>FOR GOOD.</h1>
                        </div>
                        <div className = 'mx-auto flex flex-col md:flex-row items-center gap-4'>
-                           <button className = 'bg-[#C60C30] text-[#FFFFFF] text-[16px] md:text-[17px] font-[400] rounded-[6px] px-[10px] py-[8px]'>Discover more about us</button>
+                           <Link to = '/about'><button className = 'bg-[#C60C30] text-[#FFFFFF] text-[16px] md:text-[17px] font-[400] rounded-[6px] px-[10px] py-[8px]'>Discover more about us</button></Link>
                            <div className = 'flex gap-2'>
                              <button className = 'md:text-[17px] text-[#424242] text-[16px] font-[500] ' >watch the film</button>
                              <img src= {arrowright} alt="" className = 'w-[22px]'/>
                            </div>
                        </div>
                        <div className = 'flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0'>
-                           <div className = '  w-[80%] md:w-[24%] lg:w-[26%] md:h-[100%]  lg:h-[90%] '>
+                           <div className = ' w-[80%] md:w-[24%] lg:w-[26%] md:h-[100%]  lg:h-[90%] '>
                                <Swipes/>
                            </div>
                            <div className = 'w-[100%] lg:w-[41%] md:w-[47%] md:h-[100%] lg:h-[100%] '>

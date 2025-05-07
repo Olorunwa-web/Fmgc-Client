@@ -1,6 +1,6 @@
-import React , { useState } from 'react';
+import React , { useState, useEffect } from 'react';
 import { ALLBRANDS } from '../data';
-import { NavLink, Outlet, useLocation, useMatch } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import search from '../assets/iconamoon_search-thin.svg';
 import cancel from '../assets/close_32dp_000000_FILL0_wght400_GRAD0_opsz40.svg';
 import dot from '../assets/dot-svgrepo-com.svg';
@@ -9,31 +9,37 @@ import dot from '../assets/dot-svgrepo-com.svg';
 
 
 
-const Allbrands = () => {
+const Allbrands = ({ searchTerm }) => {
 
-    const match  = useMatch("/ourbrand/allbrands")
 
 
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [searchTerm, setSearchTerm] = useState('');
-  
-  
-    const productsPerPages = 12;
-    const filteredProducts = ALLBRANDS.filter(product =>
-      product.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  
-    const totalPages = Math.ceil(filteredProducts.length / productsPerPages);
-    const startIndex = (currentPage - 1) * productsPerPages;
-    const currentProducts = filteredProducts.slice(startIndex, startIndex + productsPerPages);
+    // const products = ALLBRANDS();
 
   
+    const filtered = ALLBRANDS.filter((p) =>
+    p.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
+  const itemsPerPages = 12;
+  const start = (currentPage - 1) * itemsPerPages;
+  const paginated = filtered.slice(start, start + itemsPerPages);
+  const totalPages = Math.ceil(filtered.length / itemsPerPages);
+   
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
+  
+   
     return (
          <section className = ''>
-            <section className = 'md:flex md:flex-wrap justify-between items-center'>
-                       {currentProducts.map((product)=> {
+             {filtered.length ===  0 ? (
+                 <p className = 'text-[16px] text-[#000000] py-4'>No results found</p>
+             ) : (
+                 <>
+               <section className = 'md:flex md:flex-wrap justify-between items-center'>
+                       {paginated.map((product)=> {
                            const {id, Image, title, use1, use2, use3, use4 } = product
                            return (
                                <div key = {id} className = 'w-[100%] mb-[2.3rem] md:mb-[3rem]  md:w-[46%] lg:w-[28.7%]'>
@@ -96,6 +102,8 @@ const Allbrands = () => {
                             })}
                         </div>
                    </section>
+                 </>
+             )}
           </section>
     )
 }
