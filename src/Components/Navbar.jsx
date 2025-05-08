@@ -15,23 +15,49 @@ const Navbar = () => {
     const sidebarRef = useRef();
 
 
+    // useEffect(() => {
+    //   function handleClickOutside(event) {
+    //     if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+    //       setIsOpen(false);
+    //     }
+    //   }
+  
+    //   if (isOpen) {
+    //     document.addEventListener('mousedown', handleClickOutside);
+    //   } else {
+    //     document.removeEventListener('mousedown', handleClickOutside);
+    //   }
+  
+    //   return () => {
+    //     document.removeEventListener('mousedown', handleClickOutside);
+    //   };
+    // }, [isOpen]);
+
     useEffect(() => {
-      function handleClickOutside(event) {
-        if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      const handleClickOutside = (event) => {
+        if (
+          sidebarRef.current &&
+          !sidebarRef.current.contains(event.target)
+        ) {
           setIsOpen(false);
         }
-      }
+      };
   
       if (isOpen) {
-        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener("mousedown", handleClickOutside);
       } else {
-        document.removeEventListener('mousedown', handleClickOutside);
+        document.removeEventListener("mousedown", handleClickOutside);
       }
   
       return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
+        document.removeEventListener("mousedown", handleClickOutside);
       };
     }, [isOpen]);
+  
+    const handleLinkClick = () => {
+      setIsOpen(false);
+    };
+
     return (
       <>
         <section className="sticky top-0 left-0 w-[100%] bg-[#FFFFFF] z-999">
@@ -141,6 +167,7 @@ const Navbar = () => {
                             <NavLink
                                to= {path}
                                key = {id}
+                               onClick={handleLinkClick}
                                end
                                className={({ isActive }) =>
                                `font-medium text-[16px] text-[#B3B3B3] leading-[28px] mx-auto ${isActive
