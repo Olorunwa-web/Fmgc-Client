@@ -93,7 +93,7 @@ const Navbar = () => {
                     />
                     <button
                       onClick={logout}
-                      className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF]"
+                      className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C]   hover:bg-[#D41C1C]  hover:text-[#FFFFFF]"
                     >
                       Log out
                     </button>
@@ -101,13 +101,13 @@ const Navbar = () => {
                 ) : (
                   <>
                     <NavLink to="/auth/signin">
-                      <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C] hover:text-[#FFFFFF]">
+                      <button className=" font-medium text-[15px] leading-[28px] text-[#FFFFFF] border-1 border-solid rounded-[6px] px-[14px] py-[9px]   bg-[#D41C1C] hover:bg-[#8F0E16] hover:text-[#FFFFFF]">
                         Log in
                       </button>
                     </NavLink>
 
                     <NavLink to="/auth/signup">
-                      <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:bg-[#D41C1C]  hover:text-[#FFFFFF]">
+                      <button className=" font-medium text-[15px] leading-[28px] text-[#D41C1C] border-1 border-solid rounded-[6px] px-[14px] py-[9px]  border-[#D41C1C] hover:border-[#8F0E16]  hover:text-[#8F0E16]">
                         Sign up
                       </button>
                     </NavLink>
@@ -144,7 +144,7 @@ const Navbar = () => {
                                end
                                className={({ isActive }) =>
                                `font-medium text-[16px] text-[#B3B3B3] leading-[28px] mx-auto ${isActive
-                                 ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2 w-[120px] text-center "
+                                 ? " font-medium text-[16px] text-[#E31B37] leading-[28px]  w-[120px] text-center "
                                  : " font-medium text-[16px] text-[#B3B3B3] leading-[28px]  "
                                }`}
                              >
