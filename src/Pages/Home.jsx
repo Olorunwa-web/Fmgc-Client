@@ -74,16 +74,16 @@ const Home = () => {
                <section className = 'container mx-auto px-4 lg:px-12'>
                    <section className = 'flex flex-col gap-4' >
                        <section className = 'rounded-[14px] px-[24px] py-4 bg-[#E7E7E7] w-[100%] flex flex-col  md:flex-row md:gap-[0px] gap-[20px] items-center justify-between'>
-                          <div className = 'w-[100%] md:w-[31%] lg:w-[30%] '>
-                             <h1 className = 'lg:w-[80%] md:w-[100%] text-[#C60C30] text-[25px] md:text-[27px] lg:text-[33px] font-bold leading-[37px] md:leading-[40px] lg:leading-[46px]' >ANNUAL REPORT AND ACCOUNTS 2024</h1>
+                          <div className = 'w-[100%] md:w-[27%] lg:w-[25%] '>
+                             <h1 className = 'lg:w-[100%] md:w-[100%] text-[#C60C30] text-[25px] md:text-[26px] lg:text-[33px] font-bold leading-[37px] md:leading-[40px] lg:leading-[46px]' >ANNUAL REPORT AND ACCOUNTS 2024</h1>
                           </div>
-                          <div className = 'w-[100%] md:w-[36%]  md:flex justify-center items-center lg:w-[36%]'>
-                              <div className = 'flex flex-col gap-4 md:w-[100%] lg:w-[69%]'>
-                                 <p className = 'text-[#000000] text-[14px] md:text-[13px] lg:text-[14px] leading-[28px] font-[500]'>Since our founding in 1884, we have been creating product to delight, care for and nourish consumers. we are building on these foundations with our strategy and business transformation, as we look to the future.</p>
-                                 <span className = 'text-[#C60C30] text-[14px] leading-[28px] font-[500]'>Read our Annual Report and Accounts 2024.</span>
+                          <div className = 'w-[100%] md:w-[43%] md:flex justify-center items-center lg:w-[28%]'>
+                              <div className = 'flex flex-col gap-4 md:w-[100%] lg:w-[100%]'>
+                                 <p className = 'text-[#000000] text-[14px] md:text-[12px] lg:text-[14px] leading-[28px] md:leading-[25px] font-[500]'>Since our founding in 1884, we have been creating product to delight, care for and nourish consumers. we are building on these foundations with our strategy and business transformation, as we look to the future.</p>
+                                 <span className = 'text-[#C60C30] text-[14px] lg:text-[14px] md:text-[13px] leading-[28px] font-[500]'>Read our Annual Report and Accounts 2024.</span>
                               </div>
                           </div>
-                          <div className = ' md:flex items-center justify-end w-[100%] md:w-[31%] lg:w-[30%]'>
+                          <div className = ' md:flex items-center justify-end w-[100%] md:w-[27%] lg:w-[30%]'>
                               <img src= {annualimg} alt="" className = ' w-[100%] md:w-[100%] lg:w-[82%]'/>
                           </div>
                        </section>
@@ -91,16 +91,16 @@ const Home = () => {
                        {/*  */}
 
                        <section className = 'rounded-[14px] px-[24px] py-4 md:py-0 md:pr-0 md:ps-[24px] bg-[#E7E7E7] w-[100%] flex flex-col  md:flex-row md:gap-[0px] gap-[20px] items-center justify-between'>
-                          <div className = 'w-[100%] md:w-[31%] lg:w-[30%] '>
-                             <h1 className = 'lg:w-[50%] md:w-[80%] text-[#C60C30] text-[25px] md:text-[27px] lg:text-[33px] font-bold leading-[27px] md:leading-[30px] lg:leading-[36px]' >Interim Results 2025</h1>
+                          <div className = 'w-[100%] md:w-[27%] lg:w-[25%] '>
+                             <h1 className = 'lg:w-[60%] md:w-[80%] text-[#C60C30] text-[25px] md:text-[26px] lg:text-[33px] font-bold leading-[27px] md:leading-[30px] lg:leading-[36px]' >Interim Results 2025</h1>
                           </div>
-                          <div className = 'w-[100%] md:w-[36%]  md:flex justify-center items-center lg:w-[36%]'>
-                              <div className = 'flex flex-col gap-4 md:w-[100%] lg:w-[69%]'>
-                                 <p className = 'text-[#000000] text-[14px] md:text-[13px] lg:text-[14px] leading-[28px] font-[500]'>Solid overall trading in UK, Indonesia and ANZ. On track to meet FY25 expectations.</p>
-                                 <span className = 'text-[#C60C30] text-[14px] leading-[28px] font-[500]'>Read More.</span>
+                          <div className = 'w-[100%] md:w-[43%]  md:flex justify-center items-center lg:w-[29%]'>
+                              <div className = 'flex flex-col gap-4 md:w-[100%] lg:w-[100%]'>
+                                 <p className = 'text-[#000000] text-[14px] md:text-[12px] lg:text-[14px] leading-[28px] md:leading-[25px] font-[500]'>Solid overall trading in UK, Indonesia and ANZ. On track to meet FY25 expectations.</p>
+                                 <span className = 'text-[#C60C30] text-[14px] lg:text-[14px] md:text-[13px] leading-[28px] font-[500]'>Read More.</span>
                               </div>
                           </div>
-                          <div className = ' md:flex items-center justify-center md:justify-end w-[100%] md:w-[31%] lg:w-[30%]'>
+                          <div className = ' md:flex items-center justify-center md:justify-end w-[100%] md:w-[27%] lg:w-[30%]'>
                               <img src= {climbimg} alt="" className = ' w-[100%] md:w-[100%] lg:w-[82%]'/>
                           </div>
                        </section>
@@ -108,16 +108,16 @@ const Home = () => {
                        {/*  */}
 
                        <section className = 'rounded-[14px] px-[24px] py-4 md:py-0 md:pr-0 md:ps-[24px] bg-[#E7E7E7] w-[100%] flex flex-col  md:flex-row md:gap-[0px] gap-[20px] items-center justify-between'>
-                          <div className = 'w-[100%] md:w-[31%] lg:w-[30%] '>
-                             <h1 className = 'lg:w-[53%] md:w-[80%] text-[#C60C30] text-[25px] md:text-[27px] lg:text-[33px] font-bold leading-[27px] md:leading-[30px] lg:leading-[36px]' >PZ Cussons at a Glance</h1>
+                          <div className = 'w-[100%] md:w-[27%] lg:w-[25%] '>
+                             <h1 className = 'lg:w-[70%] md:w-[90%] text-[#C60C30] text-[25px] md:text-[26px] lg:text-[33px] font-bold leading-[27px] md:leading-[30px] lg:leading-[36px]' >PZ Cussons at a Glance</h1>
                           </div>
-                          <div className = 'w-[100%] md:w-[36%]  md:flex justify-center items-center lg:w-[36%]'>
-                              <div className = 'flex flex-col gap-4 md:w-[100%] lg:w-[69%]'>
-                                 <p className = 'text-[#000000] text-[14px] md:text-[13px] lg:text-[14px] leading-[28px] font-[500]'>Since our founding in 1884, we have been creating product to delight, care for and nourish consumers.</p>
-                                 <span className = 'text-[#C60C30] text-[14px] leading-[28px] font-[500]'>Read More.</span>
+                          <div className = 'w-[100%] md:w-[43%]  md:flex justify-center items-center lg:w-[29%]'>
+                              <div className = 'flex flex-col gap-4 md:w-[100%] lg:w-[100%]'>
+                                 <p className = 'text-[#000000] text-[14px] md:text-[12px] lg:text-[14px] leading-[28px] md:leading-[25px] font-[500]'>Since our founding in 1884, we have been creating product to delight, care for and nourish consumers.</p>
+                                 <span className = 'text-[#C60C30] text-[14px] lg:text-[14px] md:text-[13px] leading-[28px] font-[500]'>Read More.</span>
                               </div>
                           </div>
-                          <div className = ' md:flex items-center justify-center md:justify-end w-[100%] md:w-[31%] lg:w-[30%]'>
+                          <div className = ' md:flex items-center justify-center md:justify-end w-[100%] md:w-[27%] lg:w-[30%]'>
                               <img src= {calimg} alt="" className = ' w-[100%] md:w-[100%] lg:w-[82%]'/>
                           </div>
                        </section>
@@ -140,7 +140,7 @@ const Home = () => {
                                        <div className = 'relative group'>
                                          <img src= {Image} alt="" className = 'w-[100%] cursor-pointer'/>
                                          <div className = ''>
-                                          <div className = 'bg-[#FFFFFF] rounded-tl-[5px] rounded-tr-[5px] w-[100%] absolute top-0 py-4 ps-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
+                                          <div className = 'bg-[#E9E9E9] rounded-tl-[5px] rounded-tr-[5px] w-[100%] absolute top-0 py-4 ps-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
                                              <h3 className = 'text-[#000000] text-[16px] font-[500]'>FEATURES</h3>
                                              <div className = 'flex flex-col gap-1'>
                                                  <div className = 'flex items-center'>
@@ -172,8 +172,8 @@ const Home = () => {
                        })}
                    </section>
 
-                   <section className = 'my-3'>
-                      <div className="flex justify-center   space-x-2">
+                   <section className = 'my-2'>
+                      <div className="flex justify-center  space-x-2">
                           {[...Array(totalPages)].map((_, index) => {
                              const page = index + 1;
                              const isActive = page === currentPage;
@@ -197,7 +197,7 @@ const Home = () => {
 
                {/*  */}
 
-               <section className = 'pb-10'>
+               <section className = 'pb-10 pt-8'>
                    <h1 className = 'pt-2 pb-10  text-[#13294B] text-[27px] md:text-[32px] lg:text-[35px] font-bold leading-[34px] text-center ' >Latest News</h1>
                    <section>
                        <section className = 'md:flex md:flex-wrap justify-between items-cente'>
@@ -223,52 +223,7 @@ const Home = () => {
                        </section>
                    </section>
                </section>
-               {/* <section className = 'container mx-auto px-4'>
-                   <section className = 'flex justify-between items-center'>
-                       <section className = 'flex gap-3'>
-                       <NavLink
-                         to="/home/allbrands"
-                         end
-                         className={({ isActive:  Dctive }) =>
-                        (Dctive
-                           ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] ")}>
-                           All Brands
-                      </NavLink>
-                       <NavLink
-                         to="/home/hygiene"
-                         end
-                         className={({ isActive: active }) =>
-                         (active
-                           ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] ")}>
-                           Hygiene
-                      </NavLink>
-                       <NavLink
-                         to="/home/beauty"
-                         end
-                         className={({ isActive: active }) =>
-                         (active
-                           ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] ")}>
-                           Beauty
-                      </NavLink>
-                       <NavLink
-                         to="/home/baby"
-                         end
-                         className={({ isActive: active }) =>
-                         active
-                           ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2"
-                           : " font-medium text-[16px] text-[#B3B3B3] leading-[28px] "}>
-                           Baby
-                      </NavLink>
-
-                       </section>
-                       <section>
-                           <input type="search" name="" id=""/>
-                       </section>
-                   </section>
-               </section> */}
+               
            </section>
            <Prefooter/>
            <Outlet/>

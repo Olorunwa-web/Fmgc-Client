@@ -42,7 +42,7 @@ const OurBrand = () => {
             </section>
             {/*  */}
             <section className = 'container mx-auto px-4 lg:px-12'>
-            <section className = 'py-7'>
+            <section className = 'py-9'>
               <section className = 'flex justify-between items-center'>
                   <section className = ''>
                    <section className = 'hidden md:flex gap-6 md:py-10 py-9 md:w-[100%] w-[48%] '>
@@ -56,8 +56,8 @@ const OurBrand = () => {
                                end
                                className={({ isActive: active }) =>
                                (active
-                                ? " font-medium text-[16px] text-[#E31B37] leading-[28px] border-b-2 pb-2 w-[100%] "
-                                : " font-medium text-[16px] text-[#B3B3B3] leading-[28px]  "
+                                ? " font-medium text-[16px] text-[#000000] leading-[28px] border-[#E31B37] border-b-3 pb-2 w-[100%] "
+                                : " font-medium text-[16px] text-[#3C3C3C] leading-[28px]  "
                                 )}
                              >
                                {head}
