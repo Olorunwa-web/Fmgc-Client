@@ -10,6 +10,10 @@ import arrowup from '../assets/arrow-up.svg';
 import group from '../assets/Group.svg';
 import { useState } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom'
+
+
+
 
 const Footer = () => {
     const [email, setEmail] = useState("");
@@ -105,51 +109,51 @@ const Footer = () => {
                     </h4>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    <Link to = '/about' className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] hover:underline">
                       About Us
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Sustainability
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '#' onClick={(e) => e.preventDefault()}  className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Careers
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '#' onClick={(e) => e.preventDefault()}  className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Investor
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       News & Media{" "}
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link  to = '#' onClick={(e) => e.preventDefault()}className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Modern Slavery
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Tax Strategy
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Whistleblowing
-                    </p>
+                    </Link>
                   </div>
                 </div>
                 <div className="md:w-[24%]">
                   <div className="border-[#FFFFFF] border-b-[1.4px] mb-4 w-[63px] ">
-                    <h4 className="text-[#FFFFFF] text-[16px] font-medium leading-[28px]">
+                    <h4  className="text-[#FFFFFF] text-[16px] font-medium leading-[28px]">
                       BRANDS
                     </h4>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    <Link to = '/ourbrand/hygiene' className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] hover:underline">
                       Hygiene brands
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link  to = '/ourbrand/baby' className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] hover:underline">
                       Baby brands
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link  to = '/ourbrand/beauty' className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] hover:underline">
                       Beauty brands
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '/ourbrand' className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] hover:underline">
                       All brands
-                    </p>
+                    </Link>
                   </div>
                 </div>
                 <div className="md:w-[24%]">
@@ -159,21 +163,21 @@ const Footer = () => {
                     </h4>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Accessibility
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Sitemap
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Privacy & Cookies
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Terms and Conditions
-                    </p>
-                    <p className="text-[#FFFFFF] text-[14px] font-normal leading-[28px]">
+                    </Link>
+                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Employee & Recruitment Privacy Notice
-                    </p>
+                    </Link>
                   </div>
                 </div>
               </section>
