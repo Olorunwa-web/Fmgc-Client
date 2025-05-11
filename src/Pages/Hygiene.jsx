@@ -1,7 +1,7 @@
 import React ,{ useState , useEffect } from 'react'
 import { hygiene } from '../data';
 import dot from '../assets/dot-svgrepo-com.svg';
-
+import { motion } from 'framer-motion'
 
 
 
@@ -37,7 +37,10 @@ const Hygiene = ({searchTerm}) => {
                                      {paginatedhygiene.map((product)=> {
                                          const {id, Image, title, use1, use2, use3, use4 } = product
                                          return (
-                                             <div key = {id} className = 'w-[100%] mb-[2.3rem] md:mb-[3rem]  md:w-[46%] lg:w-[28.7%]'>
+                                             <motion.div key = {id} className = 'w-[100%] mb-[2.3rem] md:mb-[3rem]  md:w-[46%] lg:w-[28.7%]'
+                                               whileHover = {{ y: -15 }}
+                                               transition={{ type: "spring", stiffness: 100 , duration: 0.1}}
+                                             >
                                                  <div className = 'flex flex-col gap-2'>
                                                      <div className = 'relative group'>
                                                        <img src= {Image} alt="" className = 'w-[100%] cursor-pointer'/>
@@ -69,7 +72,7 @@ const Hygiene = ({searchTerm}) => {
                                                         <h4 className = 'text-[#000000] text-[17px] md:text-[19px] font-[400]' >{title}</h4>
                                                      </div>
                                                  </div>
-                                             </div>
+                                             </motion.div>
                                          )
                                      })}
                                  </section>
