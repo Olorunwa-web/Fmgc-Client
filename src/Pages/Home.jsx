@@ -13,6 +13,7 @@ import Swipes from '../Components/Swipes';
 import Swipes2 from '../Components/Swipes2';
 import Swipes3 from '../Components/Swipes3';
 import Prefooter from '../Components/Prefooter';
+import { motion } from 'framer-motion';
 
 
 
@@ -32,13 +33,18 @@ const Home = () => {
     useEffect(() => {
         productContainerRef.current?.scrollIntoView({ behavior: 'smooth' });
       }, [currentPage]);
-    
+
+     
 
 
     return (
         <>
            <section className = "bg-[url('')] bg-cover py-12 md:py-13 lg:py-14 flex justify-center items-center" style = {{ backgroundImage: `url(${homeBackground})` }}>
-               <section className = 'container mx-auto px-4 lg:px-12 '>
+               <motion.section className = 'container mx-auto px-4 lg:px-12 '
+                 initial= {{ opacity: 0, }}
+                 animate = {{opacity: 1 }}
+                 transition = {{ delay: 0.3, duration: 0.8, ease: 'easeInOut'}}
+               >
                    <div className = 'flex flex-col gap-5'>
                        <div>
                           <h1 className = 'mb-2 font-[700] text-center font-barlow text-[40px] md:text-[60px] lg:text-[80px] text-[#13294B] leading-[45px] md:leading-[65.8px] w-[100%]'>FOR EVERYONE, FOR LIFE,</h1>
@@ -65,7 +71,7 @@ const Home = () => {
                            </div>
                        </div>
                    </div>
-               </section>
+               </motion.section>
            </section>
 
            {/*  */}
@@ -80,7 +86,7 @@ const Home = () => {
                           <div className = 'w-[100%] md:w-[43%] md:flex justify-center items-center lg:w-[28%]'>
                               <div className = 'flex flex-col gap-4 md:w-[100%] lg:w-[100%]'>
                                  <p className = 'text-[#000000] text-[14px] md:text-[12px] lg:text-[14px] leading-[28px] md:leading-[25px] font-[500]'>Since our founding in 1884, we have been creating product to delight, care for and nourish consumers. we are building on these foundations with our strategy and business transformation, as we look to the future.</p>
-                                 <span className = 'text-[#C60C30] text-[14px] lg:text-[14px] md:text-[13px] leading-[28px] font-[500]'>Read our Annual Report and Accounts 2024.</span>
+                                 <Link to = '#' onClick={(e) => e.preventDefault()} className = 'text-[#C60C30] text-[14px] lg:text-[14px] md:text-[13px] leading-[28px] font-[500] cursor-not-allowed pointer-events-none'>Read our Annual Report and Accounts 2024.</Link>
                               </div>
                           </div>
                           <div className = ' md:flex items-center justify-end w-[100%] md:w-[27%] lg:w-[30%]'>
@@ -97,7 +103,7 @@ const Home = () => {
                           <div className = 'w-[100%] md:w-[43%]  md:flex justify-center items-center lg:w-[29%]'>
                               <div className = 'flex flex-col gap-4 md:w-[100%] lg:w-[100%]'>
                                  <p className = 'text-[#000000] text-[14px] md:text-[12px] lg:text-[14px] leading-[28px] md:leading-[25px] font-[500]'>Solid overall trading in UK, Indonesia and ANZ. On track to meet FY25 expectations.</p>
-                                 <span className = 'text-[#C60C30] text-[14px] lg:text-[14px] md:text-[13px] leading-[28px] font-[500]'>Read More.</span>
+                                 <Link to = '#'  onClick={(e) => e.preventDefault()} className = 'text-[#C60C30] text-[14px] lg:text-[14px] md:text-[13px] leading-[28px] font-[500] cursor-not-allowed pointer-events-none'>Read More.</Link>
                               </div>
                           </div>
                           <div className = ' md:flex items-center justify-center md:justify-end w-[100%] md:w-[27%] lg:w-[30%]'>
@@ -114,7 +120,7 @@ const Home = () => {
                           <div className = 'w-[100%] md:w-[43%]  md:flex justify-center items-center lg:w-[29%]'>
                               <div className = 'flex flex-col gap-4 md:w-[100%] lg:w-[100%]'>
                                  <p className = 'text-[#000000] text-[14px] md:text-[12px] lg:text-[14px] leading-[28px] md:leading-[25px] font-[500]'>Since our founding in 1884, we have been creating product to delight, care for and nourish consumers.</p>
-                                 <span className = 'text-[#C60C30] text-[14px] lg:text-[14px] md:text-[13px] leading-[28px] font-[500]'>Read More.</span>
+                                 <Link to = '#' onClick={(e) => e.preventDefault()} className = 'text-[#C60C30] text-[14px] lg:text-[14px] md:text-[13px] leading-[28px] font-[500] cursor-not-allowed pointer-events-none'>Read More.</Link>
                               </div>
                           </div>
                           <div className = ' md:flex items-center justify-center md:justify-end w-[100%] md:w-[27%] lg:w-[30%]'>
@@ -128,14 +134,17 @@ const Home = () => {
            {/*  */}
 
 
-           <section  className = 'container mx-auto px-4 lg:px-12'>
+           <section  className = 'container mx-auto px-4 lg:px-12' ref = {productContainerRef}>
                <h1 className ='py-4  text-[#13294B] text-[27px] md:text-[32px] lg:text-[35px] font-bold leading-[34px] text-center '>Discover Our Must win Brands</h1>
-               <section  className = 'my-7'>
-                   <section   className = 'md:flex md:flex-wrap justify-between items-center'>
+               <section  className = 'my-7 ' >
+                   <section className = 'md:flex md:flex-wrap justify-between items-center'>
                        {ALL.map((product)=> {
                            const {id, Image, title, use1, use2, use3, use4 } = product
                            return (
-                               <div key = {id} className = 'w-[100%] mb-[2.3rem] md:mb-[3rem]  md:w-[46%] lg:w-[28.7%]'>
+                               <motion.div key = {id} className = 'w-[100%] mb-[2.3rem] md:mb-[3rem]  md:w-[46%] lg:w-[28.7%]'
+                                 whileHover = {{ y: -15 }}
+                                 transition={{ type: "spring", stiffness: 100 , duration: 0.1}}
+                               >
                                    <div className = 'flex flex-col gap-2'>
                                        <div className = 'relative group'>
                                          <img src= {Image} alt="" className = 'w-[100%] cursor-pointer'/>
@@ -167,7 +176,7 @@ const Home = () => {
                                           <h4 className = 'text-[#000000] text-[17px] md:text-[19px] font-[400]' >{title}</h4>
                                        </div>
                                    </div>
-                               </div>
+                               </motion.div>
                            )
                        })}
                    </section>
@@ -197,17 +206,17 @@ const Home = () => {
 
                {/*  */}
 
-               <section className = 'pb-10 pt-8'>
+               <section className = 'pb-14 pt-8'>
                    <h1 className = 'pt-2 pb-10  text-[#13294B] text-[27px] md:text-[32px] lg:text-[35px] font-bold leading-[34px] text-center ' >Latest News</h1>
                    <section>
                        <section className = 'md:flex md:flex-wrap justify-between items-cente'>
                            {news.map((report)=> {
                               const {id, IMAGE, news, date} = report
                               return (
-                                  <div key = {id} className = 'w-[100%]  mb-[2.3rem] md:mb-[0px]  md:w-[47%] lg:w-[31%]'>
+                                  <div key = {id} className = 'w-[100%]  mb-[2.3rem] md:mb-[2rem]  md:w-[47%] lg:w-[31%]'>
                                       <div className = 'flex flex-col gap-4'>
-                                          <div className = 'w-[100%] '>
-                                              <img src= {IMAGE} alt="" className = 'w-[100%] md:h-[300px]'/>
+                                          <div className = 'w-[100%] overflow-hidden pap'>
+                                              <img src= {IMAGE} alt="" className = 'w-[100%] md:h-[300px] object-cover transition-transform duration-300 hover:scale-[1.4] '/>
                                           </div>
                                           <div className = 'flex items-center gap-6'>
                                               <button className = 'bg-[#FCE8EB] text-[13.05px] text-[#E31837] leading-[26.1px] font-medium px-[13.05px] py-[4.66px] rounded-[27.97px]'>corporate</button>

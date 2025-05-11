@@ -92,6 +92,8 @@ const About = () => {
 
  
   return (
+    <>
+      
     <div className="text-center max-w-full">
       <section className="bg-[#B50606] py-[10%] px-10 text-white lg:py-[5%]">
         <h1 className="block lg:hidden text-5xl lg:text-7xl pb-10 font-bold">
@@ -299,8 +301,9 @@ const About = () => {
           </button>
         </div>
       </section>
-      <Prefooter />
     </div>
+      <Prefooter />
+    </>
   );
 };
 export default About;

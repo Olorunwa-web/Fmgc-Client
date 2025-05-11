@@ -11,6 +11,7 @@ import group from '../assets/Group.svg';
 import { useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion';
 
 
 
@@ -19,6 +20,8 @@ const Footer = () => {
     const [email, setEmail] = useState("");
      const [error, setError] = useState("");
      const [loading, setLoading] = useState(false);
+
+     const MotionLink = motion(Link)
 
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -127,7 +130,7 @@ const Footer = () => {
                     <Link  to = '#' onClick={(e) => e.preventDefault()}className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
                       Modern Slavery
                     </Link>
-                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
+                    <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none" >
                       Tax Strategy
                     </Link>
                     <Link to = '#' onClick={(e) => e.preventDefault()} className="text-[#FFFFFF] text-[14px] font-normal leading-[28px] cursor-not-allowed pointer-events-none">
