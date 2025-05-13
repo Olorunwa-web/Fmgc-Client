@@ -49,7 +49,7 @@ const OurBrand = () => {
             {/*  */}
             <section className = 'container mx-auto px-4 lg:px-12'>
             <section className = 'py-9'>
-              <section className = 'flex justify-between gap-[1rem] md:gap-[0px] items-center'>
+              <section className = 'flex justify-between gap-[2rem] md:gap-[0px] items-center'>
                   <section className = ''>
                    <section className = 'hidden md:flex gap-6 md:py-10 py-9 md:w-[100%]  '>
                     {ourbrand.map((outbrand)=>{
