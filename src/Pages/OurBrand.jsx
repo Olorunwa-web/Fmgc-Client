@@ -1,4 +1,4 @@
-import React , { useState } from 'react'
+import React , { useState, useEffect } from 'react'
 import Prefooter from '../Components/Prefooter';
 import { ourbrand } from '../data';
 import { NavLink, Outlet, useMatch, useLocation, useNavigate } from 'react-router-dom';
@@ -23,10 +23,16 @@ const OurBrand = () => {
 
    const navigate = useNavigate();
    const location = useLocation();
+   const [selected, setSelected] = useState(location.pathname);
+
  
    const handleChange = (e) => {
      navigate(e.target.value);
    };
+
+   useEffect(() => {
+    setSelected(location.pathname);
+  }, [location.pathname]);
 
 
 
@@ -43,9 +49,9 @@ const OurBrand = () => {
             {/*  */}
             <section className = 'container mx-auto px-4 lg:px-12'>
             <section className = 'py-9'>
-              <section className = 'flex justify-between items-center'>
+              <section className = 'flex justify-between gap-[1rem] md:gap-[0px] items-center'>
                   <section className = ''>
-                   <section className = 'hidden md:flex gap-6 md:py-10 py-9 md:w-[100%] w-[48%] '>
+                   <section className = 'hidden md:flex gap-6 md:py-10 py-9 md:w-[100%]  '>
                     {ourbrand.map((outbrand)=>{
                         const {id, head, path } = outbrand
                         return (
@@ -67,9 +73,9 @@ const OurBrand = () => {
                     })}
                     
                    </section>
-                   <section className = 'block md:hidden py-7'>
-                       <section  className = 'flex items-center gap-1'>
-                           <select onChange = {handleChange} value = {location.pathname} className = 'font-medium text-[16px] text-[#E31837] leading-[28px] border-b-2 bprder-[#D41C1C] pb-1 outline-none focus:outline-none focus:ring-0 reltive'>
+                   <section className = 'block md:hidden py-7 w-[100%] '>
+                       <section  className = 'flex items-center gap-1 relative w-[100%]'>
+                           <select onChange = {handleChange} value = {selected} className = 'w-[150px] font-medium text-[16px] text-[#000000] leading-[28px] border-b-2 border-[#D41C1C] pb-1 outline-none focus:outline-none focus:ring-0 '>
                                {ourbrand.map((mobile) => {
                                   const {id, head, path } = mobile
                                   return (
@@ -79,13 +85,11 @@ const OurBrand = () => {
                                   )
                                })}
                            </select>
-                           <section>
-                               <img src={drops} alt=""/>
-                           </section>
+                               <img src={drops} alt="" className = 'absolute right-0  bottom-[1px] transform -translate-y-1/2 w-5 h-5'/>
                        </section>
                    </section>
                   </section>
-                  <section  className = 'w-[48%] relative flex justify-end'>
+                  <section  className = 'w-[48% relative flex justify-end'>
                     <Search onSearch = {setSearchTerm}/>
                   </section>
                 </section>

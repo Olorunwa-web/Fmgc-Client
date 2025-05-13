@@ -134,7 +134,7 @@ const Home = () => {
            {/*  */}
 
 
-           <section  className = 'container mx-auto px-4 lg:px-12' ref = {productContainerRef}>
+           <section  className = 'container mx-auto px-4 lg:px-12' >
                <h1 className ='py-4  text-[#13294B] text-[27px] md:text-[32px] lg:text-[35px] font-bold leading-[34px] text-center '>Discover Our Must win Brands</h1>
                <section  className = 'my-7 ' >
                    <section className = 'md:flex md:flex-wrap justify-between items-center'>
