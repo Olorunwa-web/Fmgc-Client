@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/image 43.png";
+// import image from "../assets/image 43.png";
 import axios from "axios";
 import { useState } from "react";
 
@@ -116,19 +116,19 @@ const Contact = () => {
     <div>
       <section className="bg-[#B50606] text-white pb-15 px-6 relative lg:pt-[60px]">
         <div className="max-w-7xl mx-auto flex flex-col-reverse mt-[-36px] lg:flex-row lg:mt-0 items-center justify-center">
-          <div className="text-center lg:pl-[30%]">
+          <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
               Contact Us
             </h1>
             <p className="text-lg">PZ will like to connect with you</p>
           </div>
-          <div className="mt-8 lg:-mt-15 lg:ml-10">
+          {/* <div className="mt-8 lg:-mt-15 lg:ml-10">
             <img
               src={image}
               alt="Contact Icons"
               className="w-[250px] sm:w-[300px] lg:w-[350px] mx-auto lg:mx-0"
             />
-          </div>
+          </div> */}
         </div>
       </section>
 
