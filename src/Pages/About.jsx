@@ -33,13 +33,13 @@ import image7 from "../assets/r.png";
    },
    {
      id: 3,
-     image: image3,
+     image: image4,
      name: "Sarah Pollard",
      position: "Chief Financial Officer",
    },
    {
      id: 4,
-     image: image4,
+     image: image3,
      name: "Vivek Ahuja",
      position: "Senior independent Director",
    },
@@ -114,7 +114,7 @@ const About = () => {
         </div>
         <div className="pt-10 lg:pt-0 lg:w-1/2">
           <h1 className="text-5xl text-center font-bold">Our Story</h1>
-          <p className="py-5">
+          <p className="py-5 text-left">
             Founded in Sierra Leone in 1884 on family values, the company aims
             for positive community impact and high ethical standards,
             encapsulated in "For everyone, for life, for good." Headquartered in
@@ -125,7 +125,7 @@ const About = () => {
             delighting, caring for, and nourishing consumers through innovation
             and responsible practices.{" "}
           </p>
-          <p>
+          <p className="text-left">
             With leading brands in Hygiene, Baby, and Beauty, supported by
             portfolio brands, the company strives to meet diverse consumer needs
             globally. Their "Building Brands For Life" strategy emphasizes
@@ -192,39 +192,30 @@ const About = () => {
               currentPage * leadersPerPage
             )
             .map((leader) => (
-              <div>
+              <div key={leader.id}>
 
-                <div
-                  key={leader.id}
-                  className="hidden lg:flex group relative rounded-lg overflow-hidden shadow-md bg-white opacity-0 animate-fadeIn"
-                >
+                <div className="hidden lg:flex group relative rounded-lg overflow-hidden shadow-md bg-white opacity-0 animate-fadeIn">
                   <img
                     src={leader.image}
                     alt={leader.name}
                     className="w-full h-[458px] object-cover"
                   />
-
                   <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gray-200 opacity-0 group-hover:opacity-90 transition-all duration-500 flex flex-col items-center justify-center p-4 text-dark">
                     <h2 className="text-3xl font-bold">{leader.name}</h2>
                     <p className="py-3 text-lg">{leader.position}</p>
-
                     <div className="flex gap-3">
                       <span className="border-1 flex items-center rounded-md px-0.5">
                         <RiFacebookLine size={18} />
                       </span>
-
                       <span className="border-1 flex items-center rounded-md px-0.5">
                         <RiTwitterXLine size={15} />
                       </span>
-
                       <span>
                         <FaThreads size={25} />
                       </span>
-
                       <span className="text-black-900">
                         <RiInstagramFill size={25} />
                       </span>
-
                       <span>
                         <FaLinkedinIn size={25} />
                       </span>
@@ -232,46 +223,35 @@ const About = () => {
                   </div>
                 </div>
 
-                <div
-                  key={leader.id}
-                  className="flex lg:hidden relative rounded-lg overflow shadow-md bg-white opacity-0 animate-fadeIn"
-                >
+
+                <div className="flex lg:hidden relative rounded-lg overflow shadow-md bg-white opacity-0 animate-fadeIn">
                   <img
                     src={leader.image}
                     alt={leader.name}
                     className="w-full h-[458px] object-cover"
                   />
-
                   <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gray-100 opacity-80 transition-all duration-500 flex flex-col items-center justify-center p-4 text-dark">
                     <h2 className="text-3xl font-bold">{leader.name}</h2>
                     <p className="py-3 text-lg">{leader.position}</p>
-
                     <div className="flex gap-3">
                       <span className="border-1 flex items-center rounded-md px-0.5">
                         <RiFacebookLine size={18} />
                       </span>
-
                       <span className="border-1 flex items-center rounded-md px-0.5">
                         <RiTwitterXLine size={15} />
                       </span>
-
                       <span>
                         <FaThreads size={25} />
                       </span>
-
                       <span className="text-black-900">
                         <RiInstagramFill size={25} />
                       </span>
-
                       <span>
                         <FaLinkedinIn size={25} />
                       </span>
                     </div>
                   </div>
                 </div>
-
-
-
               </div>
             ))}
         </div>
