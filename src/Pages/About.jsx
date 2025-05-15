@@ -15,6 +15,7 @@ import Prefooter from '../Components/Prefooter';
 import image5 from "../assets/p.png";
 import image6 from "../assets/q.png";
 import image7 from "../assets/r.png";
+import image8 from "../assets/photo-1438761681033-6461ffad8d80.avif"
 
 
 
@@ -59,6 +60,12 @@ import image7 from "../assets/r.png";
      id: 7,
      image: image7,
      name: "Valeria Juarez",
+     position: "Non-Executive Director",
+   },
+   {
+     id: 8,
+     image: image8,
+     name: "Daniella Alphonso",
      position: "Non-Executive Director",
    },
  ];
@@ -114,7 +121,7 @@ const About = () => {
         </div>
         <div className="pt-10 lg:pt-0 lg:w-1/2">
           <h1 className="text-5xl text-center font-bold">Our Story</h1>
-          <p className="py-5 text-left">
+          <p className="py-5 text-center lg:text-left">
             Founded in Sierra Leone in 1884 on family values, the company aims
             for positive community impact and high ethical standards,
             encapsulated in "For everyone, for life, for good." Headquartered in

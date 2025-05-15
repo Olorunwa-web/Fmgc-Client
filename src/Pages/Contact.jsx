@@ -114,7 +114,7 @@ const Contact = () => {
 
   return (
     <div>
-      <section className="bg-[#B50606] text-white py-15 px-6 relative lg:pt-[60px]">
+      <section className="bg-[#B50606] text-white py-[10%] px-6 relative lg:py-[5%]">
         <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row lg:mt-0 items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
