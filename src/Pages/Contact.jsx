@@ -120,7 +120,7 @@ const Contact = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
               Contact Us
             </h1>
-            <p className="text-lg">PZ will like to connect with you</p>
+            <p className="text-xl">PZ will like to connect with you</p>
           </div>
           {/* <div className="mt-8 lg:-mt-15 lg:ml-10">
             <img
