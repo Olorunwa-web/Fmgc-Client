@@ -132,7 +132,7 @@ const About = () => {
             delighting, caring for, and nourishing consumers through innovation
             and responsible practices.{" "}
           </p>
-          <p className="text-left">
+          <p className="text-center lg:text-left">
             With leading brands in Hygiene, Baby, and Beauty, supported by
             portfolio brands, the company strives to meet diverse consumer needs
             globally. Their "Building Brands For Life" strategy emphasizes
