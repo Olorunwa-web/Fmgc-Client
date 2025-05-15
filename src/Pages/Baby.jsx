@@ -34,7 +34,7 @@ const Baby = ({searchTerm}) => {
                                      {paginatedbaby.map((product)=> {
                                          const {id, Image, title, use1, use2, use3, use4 } = product
                                          return (
-                                             <motion.div key = {id} className = 'w-[100%] mb-[2.3rem] md:mb-[3rem]  md:w-[46%] lg:w-[28.7%]'
+                                             <div key = {id} className = 'w-[100%] mb-[2.3rem] md:mb-[3rem]  md:w-[46%] lg:w-[28.7%]'
                                                whileHover = {{ y: -15 }}
                                                transition={{ type: "spring", stiffness: 100 , duration: 0.1}}
                                              >
@@ -69,7 +69,7 @@ const Baby = ({searchTerm}) => {
                                                         <h4 className = 'text-[#000000] text-[17px] md:text-[19px] font-[400]' >{title}</h4>
                                                      </div>
                                                  </div>
-                                             </motion.div>
+                                             </div>
                                          )
                                      })}
                                  </section>
