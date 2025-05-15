@@ -42,7 +42,7 @@ const OurBrand = () => {
                 <section className = 'container mx-auto px-4 lg:px-12'>
                     <section className = 'text-center '>
                         <h1 className = ' pb-4 text-white md:text-[57px] lg:text-7xl text-[40px] font-bold'>Our Brand</h1>
-                        <p className = ' mx-auto text-white lg:text-2xl text-md w-[80%] font-medium lg:w-[45%]'>Our portfolio includes some of the world's most beloved and trusted brands, making a meaningful impact on lives across the USA, Europe, Africa, and the Asia-region.</p>
+                        <p className = ' mx-auto text-white lg:text-2xl text-md w-[80%] font-medium lg:w-[800px]'>Our portfolio includes some of the world's most beloved and trusted brands, making a meaningful impact on lives across the USA, Europe, Africa, and the Asia-region.</p>
                     </section>
                 </section>
             </section>
