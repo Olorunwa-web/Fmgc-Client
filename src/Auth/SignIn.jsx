@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import logo from "../assets/pz 3 1.png";
 import image from "../assets/Frame 150.png";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,9 +8,11 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
 import { PiBackspaceFill } from "react-icons/pi";
+import { AuthContext } from "./context/AuthContext";
 
 
 const SignIn = () => {
+  const { login } = useContext(AuthContext);
   const [form, setForm] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
@@ -47,26 +49,16 @@ const SignIn = () => {
     }
     setLoading(true);
     try {
-      const res = await fetch(
-        "https://it-project-server.onrender.com/api/auth/signin",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(form),
-        }
-      );
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Login failed");
-
-      localStorage.setItem("token", data.token);
-      navigate("/");
+      await login(form.email, form.password); // Use AuthContext login
+      navigate("/"); // Navigate on success
     } catch (err) {
-      setError(err.message);
+      setError(err.message); // Display error
     } finally {
       setLoading(false);
     }
   };
+  
+
    const googleSignin = useGoogleLogin({
      flow: "implicit",
      onSuccess: async (tokenResponse) => {
